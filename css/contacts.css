@@ -1,0 +1,351 @@
+main {
+    background: linear-gradient(180deg,
+        #0a0a0a 0%,
+        #1a1210 15%,
+        rgb(70, 45, 20) 45%,
+        rgb(120, 66, 20) 100%);
+}
+
+/* ==================== HERO БЛОК ==================== */
+.contacts-main {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+}
+
+.contacts-main img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) saturate(1.1);
+    z-index: 0;
+}
+
+.contacts-main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.75) 100%);
+    z-index: 1;
+}
+
+.contacts-main::before {
+    content: "📍";
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 200px;
+    opacity: 0.08;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.contacts-main-text {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 700px;
+}
+
+.contacts-main-text h1 {
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 52px;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+.contacts-main-text h1::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 4px;
+    margin-top: 24px;
+    background: linear-gradient(90deg, rgb(223, 93, 5), rgb(245, 166, 35));
+    border-radius: 2px;
+}
+
+/* ==================== БЛОК КОНТАКТНОЙ ИНФОРМАЦИИ ==================== */
+.contacts-info {
+    width: 100%;
+    padding: 70px 8% 60px;
+    box-sizing: border-box;
+}
+
+.contacts-info-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contacts-info-container > h2 {
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 32px;
+    color: rgb(223, 93, 5);
+    margin: 0 0 36px 0;
+    position: relative;
+    display: inline-block;
+}
+
+.contacts-info-container > h2::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, rgb(223, 93, 5), rgb(245, 166, 35));
+    border-radius: 2px;
+}
+
+.contacts-info-container-text {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.concret-block {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(223, 93, 5, 0.25);
+    border-radius: 20px;
+    padding: 28px 26px;
+    transition: all 0.3s ease;
+}
+
+.concret-block:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(223, 93, 5, 0.5);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.3);
+}
+
+.concret-block h2 {
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245, 166, 35, 0.85);
+    margin: 0 0 12px 0;
+}
+
+.concret-block p {
+    font-family: 'Avenir-Medium', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+}
+
+/* ==================== БЛОК С КАРТОЙ ==================== */
+.contacts-map-block {
+    width: 100%;
+    padding: 0 8% 90px;
+    box-sizing: border-box;
+}
+
+.contacts-map-block > div {
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(223, 93, 5, 0.25);
+}
+
+.contacts-map-block iframe {
+    display: block;
+    width: 100%;
+    height: 500px;
+    border: none;
+    filter: saturate(0.9) brightness(0.95);
+}
+
+.footer{
+    background: linear-gradient(180deg,
+        rgb(120, 66, 20) 0%,
+        rgb(91, 51, 15) 15%,
+        rgb(255, 128, 0) 45%,
+        rgb(78, 47, 19) 100%);
+}
+
+/* ======================================================= */
+/* ===== ПЛАНШЕТЫ И МАЛЕНЬКИЕ НОУТБУКИ (до 1024px) ===== */
+/* ======================================================= */
+@media (max-width: 1024px) {
+    .contacts-main {
+        height: 360px;
+    }
+
+    .contacts-main-text h1 {
+        font-size: 42px;
+    }
+
+    .contacts-main::before {
+        font-size: 160px;
+    }
+
+    .contacts-info {
+        padding: 60px 6% 50px;
+    }
+
+    .contacts-info-container > h2 {
+        font-size: 28px;
+    }
+
+    .contacts-map-block {
+        padding: 0 6% 70px;
+    }
+
+    .contacts-map-block iframe {
+        height: 420px;
+    }
+}
+
+/* ======================================================= */
+/* ===== БОЛЬШИЕ ТЕЛЕФОНЫ И ПЛАНШЕТЫ ВЕРТИКАЛЬНО (до 768px) ===== */
+/* ======================================================= */
+@media (max-width: 768px) {
+    .contacts-main {
+        height: 300px;
+    }
+
+    .contacts-main-text {
+        left: 6%;
+        max-width: 85%;
+    }
+
+    .contacts-main-text h1 {
+        font-size: 32px;
+    }
+
+    .contacts-main::before {
+        font-size: 120px;
+        right: 3%;
+    }
+
+    .contacts-info {
+        padding: 45px 6% 35px;
+    }
+
+    .contacts-info-container > h2 {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+
+    .contacts-info-container-text {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .concret-block {
+        padding: 22px 20px;
+    }
+
+    .concret-block p {
+        font-size: 16px;
+    }
+
+    .contacts-map-block {
+        padding: 0 6% 55px;
+    }
+
+    .contacts-map-block iframe {
+        height: 320px;
+    }
+}
+
+/* ======================================================= */
+/* ===== ОСНОВНАЯ МАССА ТЕЛЕФОНОВ (до 480px) ===== */
+/* ======================================================= */
+@media (max-width: 480px) {
+    .contacts-main {
+        height: 240px;
+    }
+
+    .contacts-main-text h1 {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+
+    .contacts-main-text h1::after {
+        width: 60px;
+        height: 3px;
+        margin-top: 16px;
+    }
+
+    .contacts-main::before {
+        font-size: 90px;
+    }
+
+    .contacts-info {
+        padding: 32px 5% 28px;
+    }
+
+    .contacts-info-container > h2 {
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
+
+    .contacts-info-container > h2::after {
+        width: 55px;
+    }
+
+    .concret-block {
+        padding: 18px 16px;
+        border-radius: 16px;
+    }
+
+    .concret-block h2 {
+        font-size: 13px;
+    }
+
+    .concret-block p {
+        font-size: 15px;
+    }
+
+    .contacts-map-block {
+        padding: 0 5% 40px;
+    }
+
+    .contacts-map-block > div {
+        border-radius: 16px;
+    }
+
+    .contacts-map-block iframe {
+        height: 250px;
+    }
+}
+
+/* ======================================================= */
+/* ===== САМЫЕ УЗКИЕ ЭКРАНЫ (до 360px) ===== */
+/* ======================================================= */
+@media (max-width: 360px) {
+    .contacts-main {
+        height: 210px;
+    }
+
+    .contacts-main-text h1 {
+        font-size: 20px;
+    }
+
+    .contacts-info-container > h2 {
+        font-size: 18px;
+    }
+
+    .concret-block p {
+        font-size: 14px;
+    }
+
+    .contacts-map-block iframe {
+        height: 220px;
+    }
+}

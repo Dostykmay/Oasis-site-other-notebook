@@ -1,0 +1,101 @@
+<header class="header">
+    <nav class="nav-container">
+        <input type="checkbox" id="burger-toggle" class="burger-checkbox">
+
+        <label for="burger-toggle" class="burger-label" aria-label="Открыть или закрыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul class="nav-menu">
+            <li class="menu-item">
+                <a class="menu-a" href="index.html">Главная</a>
+            </li>
+
+            <li class="menu-item">
+                <!-- details - эл-ты для раскрыв. списка -->
+                <details class="menu-drop-down-list">
+                    <!-- summary - видимая часть, по которой кликают -->
+                    <summary class="menu-a">
+                        Селекционные программы
+                        <!-- span - ручная кастомная стрекла, которая показывает, что меню открывается -->
+                        <!-- aria-hidden чтобы для незрячих не читалось тип -->
+                        <span class="dropdown-arrow" aria-hidden="true"></span>
+                    </summary>
+
+                    <div class="menu-drop-down-list-parts">
+                        <a href="sunflower.html">Подсолнечник</a>
+                        <a href="wheat.html">Пшеница</a>
+
+                        <a href="otherPlants.html">
+                            Медоносные травы
+                        </a>
+
+                        <a class="otherPlants" href="other_cultures.html">
+                            Прочие культуры
+                        </a>
+                    </div>
+                </details>
+            </li>
+
+            <li class="menu-item">
+                <details class="menu-drop-down-list">
+                    <summary class="menu-a">
+                        База
+                        <span class="dropdown-arrow" aria-hidden="true"></span>
+                    </summary>
+
+                    <div class="menu-drop-down-list-parts">
+                        <a href="basa_history.html">История базы</a>
+                        <a href="basa_tech.html">Техника и оборудование</a>
+                    </div>
+                </details>
+            </li>
+
+            <li class="menu-item">
+                <details class="menu-drop-down-list">
+                    <summary class="menu-a">
+                        Каталог
+                        <span class="dropdown-arrow" aria-hidden="true"></span>
+                    </summary>
+
+                    <div class="menu-drop-down-list-parts">
+                        <a href="our_seeds.html">Наши семена</a>
+                        <a href="package.html">Упаковка</a>
+                        <a href="disrtubutov.html">Где купить?</a>
+                        <a href="certificates.html">Сертификаты и патенты</a>
+                    </div>
+                </details>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-a" href="pchela.html">Опыление</a>
+            </li>
+
+            <li class="menu-item">
+                <details class="menu-drop-down-list">
+                    <summary class="menu-a">
+                        О нас
+                        <span class="dropdown-arrow" aria-hidden="true"></span>
+                    </summary>
+
+                    <div class="menu-drop-down-list-parts">
+                        <a href="aboutUs.html">Наша история</a>
+                        <a href="partners.html">Сотрудничество</a>
+                        <a href="UsBrands.html">Наши бренды</a>
+                        <a href="publications.html">Публикации</a>
+                    </div>
+                </details>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-a" href="contacts.html">Связь с нами</a>
+            </li>
+
+            <li class="menu-item">
+                <a class="menu-a buran-menu-link" href="buran.html">Буран</a>
+            </li>
+        </ul>
+    </nav>
+</header>

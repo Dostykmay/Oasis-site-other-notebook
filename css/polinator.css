@@ -1,0 +1,518 @@
+/* ======================================================= */
+/* ================ СТРАНИЦА «ПЧЁЛЫ» ==================== */
+/* ======================================================= */
+
+.pollinator-page{
+    min-height: 100vh;
+
+    background: linear-gradient(
+        180deg,
+        #0a0a0a 0%,
+        #1a1210 18%,
+        rgb(73, 42, 18) 66%,
+        rgb(150, 80, 20) 100%
+    );
+}
+
+
+/* ======================================================= */
+/* ========================= HERO ======================== */
+/* ======================================================= */
+
+.pollinator-hero{
+    position: relative;
+
+    width: 100%;
+    height: 480px;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+.pollinator-hero-image{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: brightness(0.43) saturate(1.04);
+
+    transition: transform 0.8s ease;
+}
+
+.pollinator-hero:hover .pollinator-hero-image{
+    transform: scale(1.03);
+}
+
+.pollinator-hero-overlay{
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.80) 0%,
+            rgba(0, 0, 0, 0.47) 48%,
+            rgba(0, 0, 0, 0.12) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.04) 0%,
+            rgba(8, 8, 8, 0.73) 100%
+        );
+}
+
+.pollinator-hero-content{
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    z-index: 1;
+
+    max-width: 720px;
+
+    transform: translateY(-43%);
+}
+
+.pollinator-back-link{
+    display: inline-flex;
+
+    margin-bottom: 32px;
+
+    color: rgba(255, 230, 180, 0.88);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pollinator-back-link:hover,
+.pollinator-back-link:focus{
+    color: #ffb703;
+
+    outline: none;
+
+    transform: translateX(-3px);
+}
+
+.pollinator-hero-label{
+    margin: 0 0 12px;
+
+    color: #ffb703;
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.pollinator-hero-content h1{
+    margin: 0;
+
+    color: white;
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: clamp(42px, 5vw, 66px);
+    line-height: 1.05;
+
+    text-shadow: 0 4px 22px rgba(0, 0, 0, 0.66);
+}
+
+.pollinator-hero-content h1::after{
+    content: "";
+
+    display: block;
+
+    width: 84px;
+    height: 4px;
+    margin-top: 22px;
+
+    border-radius: 99px;
+
+    background: linear-gradient(
+        90deg,
+        #ffb703,
+        rgb(223, 93, 5)
+    );
+}
+
+.pollinator-hero-description{
+    max-width: 620px;
+    margin: 21px 0 0;
+
+    color: rgba(248, 243, 237, 0.91);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* ======================================================= */
+/* ===================== ОСНОВНОЙ БЛОК ================== */
+/* ======================================================= */
+
+.pollinator-content{
+    padding: 82px 8% 92px;
+    box-sizing: border-box;
+}
+
+.pollinator-content-container{
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.pollinator-content-heading{
+    display: flex;
+    align-items: center;
+    gap: 19px;
+
+    margin-bottom: 40px;
+}
+
+
+/* ======================================================= */
+/* ================ ИЗОБРАЖЕНИЕ ПЧЕЛЫ =================== */
+/* ======================================================= */
+
+.pollinator-content-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    width: 78px;
+    height: 78px;
+    padding: 8px;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(255, 230, 132, 0.34),
+            rgba(255, 183, 3, 0.08) 55%,
+            rgba(0, 0, 0, 0) 100%
+        );
+
+    border: 1px solid rgba(255, 183, 3, 0.55);
+    border-radius: 50%;
+
+    box-shadow:
+        inset 0 0 16px rgba(255, 183, 3, 0.12),
+        0 8px 18px rgba(0, 0, 0, 0.20);
+}
+
+.pollinator-content-icon img{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.48));
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.pollinator-content-heading:hover .pollinator-content-icon img{
+    filter: drop-shadow(0 6px 9px rgba(0, 0, 0, 0.58));
+
+    transform: translateY(-2px) rotate(-5deg) scale(1.07);
+}
+
+
+/* ======================================================= */
+/* ======================== ЗАГОЛОВОК ==================== */
+/* ======================================================= */
+
+.pollinator-content-heading p{
+    margin: 0 0 7px;
+
+    color: #ffb703;
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.pollinator-content-heading h2{
+    margin: 0;
+
+    color: white;
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: clamp(29px, 3.4vw, 43px);
+    line-height: 1.16;
+}
+
+
+/* ======================================================= */
+/* ====================== ТЕКСТ ПЧЁЛ ===================== */
+/* ======================================================= */
+
+.pollinator-text-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+
+    margin-bottom: 42px;
+}
+
+.pollinator-text-grid p{
+    margin: 0;
+    padding-left: 18px;
+
+    color: rgba(241, 236, 230, 0.91);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 16px;
+    line-height: 1.72;
+
+    border-left: 3px solid rgba(255, 183, 3, 0.80);
+}
+
+
+/* ======================================================= */
+/* ================== КАРТОЧКИ С ЦИФРАМИ ================ */
+/* ======================================================= */
+
+.pollinator-facts{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.pollinator-fact-card{
+    min-height: 132px;
+    padding: 23px 21px;
+    box-sizing: border-box;
+
+    background: rgba(0, 0, 0, 0.17);
+
+    border: 1px solid rgba(255, 183, 3, 0.27);
+    border-radius: 17px;
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.pollinator-fact-card:hover{
+    background: rgba(255, 183, 3, 0.10);
+
+    border-color: rgba(255, 183, 3, 0.58);
+
+    transform: translateY(-4px);
+}
+
+.pollinator-fact-card strong{
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #ffb703;
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: 27px;
+    line-height: 1.15;
+}
+
+.pollinator-fact-card span{
+    display: block;
+
+    color: rgba(240, 235, 230, 0.76);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 14px;
+    line-height: 1.46;
+}
+
+
+/* ======================================================= */
+/* ====================== ПЛАНШЕТЫ ======================= */
+/* ======================================================= */
+
+@media (max-width: 1024px){
+    .pollinator-hero{
+        height: 420px;
+    }
+
+    .pollinator-content{
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+
+    .pollinator-text-grid{
+        grid-template-columns: 1fr;
+        gap: 19px;
+    }
+}
+
+
+/* ======================================================= */
+/* ======================= ТЕЛЕФОНЫ ====================== */
+/* ======================================================= */
+
+@media (max-width: 768px){
+    .pollinator-hero{
+        height: 360px;
+    }
+
+    .pollinator-hero-content{
+        top: auto;
+        right: 6%;
+        bottom: 38px;
+        left: 6%;
+
+        transform: none;
+    }
+
+    .pollinator-back-link{
+        margin-bottom: 21px;
+
+        font-size: 13px;
+    }
+
+    .pollinator-hero-label{
+        margin-bottom: 8px;
+
+        font-size: 11px;
+        letter-spacing: 1.3px;
+    }
+
+    .pollinator-hero-content h1{
+        font-size: 39px;
+    }
+
+    .pollinator-hero-content h1::after{
+        width: 62px;
+        height: 3px;
+        margin-top: 15px;
+    }
+
+    .pollinator-hero-description{
+        margin-top: 14px;
+
+        font-size: 16px;
+    }
+
+    .pollinator-content{
+        padding: 54px 6% 64px;
+    }
+
+    .pollinator-content-heading{
+        gap: 14px;
+
+        margin-bottom: 30px;
+    }
+
+    .pollinator-content-icon{
+        width: 64px;
+        height: 64px;
+        padding: 7px;
+    }
+
+    .pollinator-content-heading h2{
+        font-size: 29px;
+    }
+
+    .pollinator-facts{
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .pollinator-fact-card{
+        min-height: 0;
+    }
+}
+
+
+/* ======================================================= */
+/* =================== ОБЫЧНЫЕ ТЕЛЕФОНЫ ================= */
+/* ======================================================= */
+
+@media (max-width: 480px){
+    .pollinator-hero{
+        height: 290px;
+    }
+
+    .pollinator-hero-content{
+        right: 5%;
+        bottom: 25px;
+        left: 5%;
+    }
+
+    .pollinator-back-link{
+        margin-bottom: 16px;
+
+        font-size: 12px;
+    }
+
+    .pollinator-hero-content h1{
+        font-size: 31px;
+    }
+
+    .pollinator-hero-description{
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .pollinator-content{
+        padding: 42px 5% 50px;
+    }
+
+    .pollinator-content-heading{
+        align-items: flex-start;
+        gap: 11px;
+    }
+
+    .pollinator-content-icon{
+        width: 53px;
+        height: 53px;
+        padding: 6px;
+    }
+
+    .pollinator-content-heading p{
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .pollinator-content-heading h2{
+        font-size: 24px;
+    }
+
+    .pollinator-text-grid{
+        gap: 16px;
+
+        margin-bottom: 28px;
+    }
+
+    .pollinator-text-grid p{
+        padding-left: 13px;
+
+        font-size: 14px;
+        line-height: 1.62;
+    }
+
+    .pollinator-fact-card{
+        padding: 17px;
+    }
+
+    .pollinator-fact-card strong{
+        font-size: 22px;
+    }
+
+    .pollinator-fact-card span{
+        font-size: 13px;
+    }
+}

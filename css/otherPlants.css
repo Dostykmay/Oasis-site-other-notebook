@@ -1,0 +1,219 @@
+.plants-page {
+    background: linear-gradient(180deg, #f8f6f0 0%, rgb(173, 171, 171) 70%, rgb(132, 129, 128) 90%);
+    padding: 100px 0 60px;
+}
+
+.plant-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px 8%;
+    box-sizing: border-box;
+}
+
+.plant-section h2 {
+    font-size: 36px;
+    font-family: 'Avenir-Bold', sans-serif;
+    color: #2a2a2a;
+    margin: 0 0 32px 0;
+    text-align: center;
+}
+
+.plant-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 36px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.plant-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+/* ======================================================= */
+/* ===== ПОЛОЖЕНИЕ РАЗДЕЛОВ ПРИ ПЕРЕХОДЕ ИЗ МЕНЮ ========= */
+/* ======================================================= */
+
+
+#honey-plants-title{
+    scroll-margin-top: 100px;
+}
+
+#other-plants-title{
+    /*
+        Высота fixed-шапки 70px + 20px запаса.
+        Предыдущий раздел останется выше экрана.
+    */
+    scroll-margin-top: 90px;
+}
+
+.plant-card img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 24px;
+    filter: brightness(0.85);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+}
+
+.plant-card p {
+    margin-top: 14px;
+    font-size: 22px;
+    font-family: 'Avenir-Medium', sans-serif;
+    color: rgba(0, 0, 0, 0.95);
+    text-align: center;
+    transition: font-size 0.25s ease;
+}
+
+.plant-card:hover {
+    transform: translateY(-4px);
+}
+
+.plant-card:hover img {
+    filter: brightness(1);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+
+.plant-card:hover p {
+    font-size: 24px;
+}
+
+.plant-section > h1 + .plant-grid{
+    margin-top: 46px;
+}
+
+/* ======================================================= */
+/* ===== ПЛАНШЕТЫ И МАЛЕНЬКИЕ НОУТБУКИ (до 1024px) ===== */
+/* ======================================================= */
+@media (max-width: 1024px) {
+    .plant-section {
+        padding: 35px 6%;
+    }
+
+    .plant-section h2 {
+        font-size: 32px;
+    }
+
+    .plant-grid {
+        gap: 28px;
+    }
+
+    .plant-card {
+        width: 170px;
+    }
+
+    .plant-card img {
+        width: 145px;
+        height: 145px;
+    }
+
+    .plant-card p {
+        font-size: 20px;
+    }
+}
+
+/* ======================================================= */
+/* ===== БОЛЬШИЕ ТЕЛЕФОНЫ И ПЛАНШЕТЫ ВЕРТИКАЛЬНО (до 768px) ===== */
+/* ======================================================= */
+@media (max-width: 768px) {
+    .plant-section {
+        padding: 30px 5%;
+    }
+
+    .plant-section h2 {
+        font-size: 28px;
+    }
+
+    .plant-grid {
+        gap: 24px;
+    }
+
+    .plant-card {
+        width: 150px;
+    }
+
+    .plant-card img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .plant-card p {
+        font-size: 18px;
+    }
+
+    .plant-card:hover p {
+        font-size: 19px;
+    }
+}
+
+/* ======================================================= */
+/* ===== ОСНОВНАЯ МАССА ТЕЛЕФОНОВ (до 480px) ===== */
+/* ======================================================= */
+@media (max-width: 480px) {
+    .plants-page {
+        padding: 15px 0 40px;
+    }
+
+    .plant-section {
+        padding: 24px 5%;
+    }
+
+    .plant-section h2 {
+        font-size: 22px;
+        margin-bottom: 22px;
+    }
+
+    .plant-grid {
+        gap: 16px;
+    }
+
+    .plant-card {
+        width: 105px;
+    }
+
+    .plant-card img {
+        width: 95px;
+        height: 95px;
+        border-radius: 16px;
+    }
+
+    .plant-card p {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .plant-card:hover p {
+        font-size: 15px;
+    }
+}
+
+/* ======================================================= */
+/* ===== САМЫЕ УЗКИЕ ЭКРАНЫ (до 360px) ===== */
+/* ======================================================= */
+@media (max-width: 360px) {
+    .plant-section h2 {
+        font-size: 19px;
+    }
+
+    .plant-card {
+        width: 90px;
+    }
+
+    .plant-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .plant-card p {
+        font-size: 13px;
+    }
+}

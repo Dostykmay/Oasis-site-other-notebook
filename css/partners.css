@@ -1,0 +1,686 @@
+/* ==================== ГЛАВНЫЙ БЛОК ==================== */
+
+.partners-main-block{
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 60px 8%;
+    box-sizing: border-box;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        #0a0a0a 0%,
+        #1a1210 30%,
+        rgb(70, 45, 20) 70%,
+        rgb(120, 66, 20) 100%
+    );
+}
+
+.partners-main-block::before{
+    content: "🤝";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    z-index: 0;
+    font-size: 260px;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+.partners-main-block-text{
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    animation: partnersFadeInUp 0.8s ease both;
+}
+
+.partners-main-block-text h1{
+    margin: 0 0 16px;
+    color: white;
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 48px;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.partners-main-block-text h1::after{
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    margin: 20px auto 0;
+    border-radius: 2px;
+    background: linear-gradient(
+        90deg,
+        rgb(223, 93, 5),
+        rgb(245, 166, 35)
+    );
+}
+
+.partners-main-block-text p{
+    margin: 0;
+    color: rgba(240, 235, 230, 0.85);
+    font-family: 'Avenir-Medium', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* ==================== КАТЕГОРИИ ==================== */
+
+.partners-grid-block{
+    width: 100%;
+    padding: 80px 8% 100px;
+    box-sizing: border-box;
+    background: linear-gradient(
+        180deg,
+        rgb(120, 66, 20) 0%,
+        rgb(70, 45, 20) 40%,
+        #14100d 100%
+    );
+}
+
+.partners-category{
+    max-width: 1200px;
+    margin: 0 auto 90px;
+}
+
+.partners-category:last-child{
+    margin-bottom: 0;
+}
+
+.partners-category-title{
+    position: relative;
+    display: inline-block;
+    margin: 0 0 42px;
+    color: white;
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 34px;
+}
+
+.partners-category-title::after{
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    left: 0;
+    width: 90px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(
+        90deg,
+        rgb(223, 93, 5),
+        rgb(245, 166, 35)
+    );
+}
+
+/* ==================== СЕТКА ==================== */
+
+.partners-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+    width: 100%;
+}
+
+/* ==================== КАРТОЧКА ==================== */
+
+.partner-card{
+    position: relative;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 36px 28px 28px;
+    border: 1px solid rgba(223, 93, 5, 0.22);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.05);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: partnersFadeInUp 0.7s ease forwards;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+/* Каскадное появление карточек */
+.partner-card:nth-child(6n + 1){
+    animation-delay: 0.05s;
+}
+
+.partner-card:nth-child(6n + 2){
+    animation-delay: 0.15s;
+}
+
+.partner-card:nth-child(6n + 3){
+    animation-delay: 0.25s;
+}
+
+.partner-card:nth-child(6n + 4){
+    animation-delay: 0.35s;
+}
+
+.partner-card:nth-child(6n + 5){
+    animation-delay: 0.45s;
+}
+
+.partner-card:nth-child(6n){
+    animation-delay: 0.55s;
+}
+
+/* Световой блик на карточке */
+.partner-card::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 60%;
+    height: 200%;
+    pointer-events: none;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.12),
+        transparent
+    );
+    transform: rotate(20deg);
+    transition: left 0.7s ease;
+}
+
+.partner-card:hover::before{
+    left: 130%;
+}
+
+.partner-card:hover{
+    border-color: rgba(223, 93, 5, 0.55);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* ==================== ЛОГОТИПЫ ==================== */
+
+.partner-card-logo{
+    position: relative;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 32px;
+}
+
+/*
+    Логотипы:
+    - сильно закруглённые углы;
+    - мягко исчезающие края;
+    - изображение остаётся чётким по центру.
+*/
+.partner-card-logo img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+
+    border-radius: 42px;
+
+    /*
+        Маска создаёт мягкие, слегка размытые края.
+        В центре изображение непрозрачное.
+    */
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 58%,
+        rgba(0, 0, 0, 0.94) 70%,
+        rgba(0, 0, 0, 0.62) 82%,
+        rgba(0, 0, 0, 0.18) 93%,
+        transparent 100%
+    );
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 58%,
+        rgba(0, 0, 0, 0.94) 70%,
+        rgba(0, 0, 0, 0.62) 82%,
+        rgba(0, 0, 0, 0.18) 93%,
+        transparent 100%
+    );
+
+    filter: brightness(0.96) grayscale(0.12);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.partner-card:hover .partner-card-logo img{
+    filter: brightness(1.08) grayscale(0);
+    transform: scale(1.04);
+}
+
+/* Заглушка для партнёров, у которых пока нет файла логотипа */
+.partner-card-logo-empty{
+    border: 1px dashed rgba(245, 166, 35, 0.38);
+    border-radius: 42px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(245, 166, 35, 0.1),
+        rgba(0, 0, 0, 0) 72%
+    );
+}
+
+.partner-card-logo-empty span{
+    color: rgba(240, 235, 230, 0.5);
+    font-family: 'Avenir-Medium', sans-serif;
+    font-size: 12px;
+    line-height: 1.45;
+    letter-spacing: 1px;
+}
+
+.partner-card-name{
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: rgba(240, 235, 230, 0.85);
+    font-family: 'Avenir-Medium', sans-serif;
+    font-size: 15px;
+    line-height: 1.35;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+}
+
+/* ======================================================= */
+/* ======= БУКВА Z В ЛОГОТИПЕ «ZЕЛАНДИЯ» — ТРИКОЛОР ===== */
+/* ======================================================= */
+
+.zelandiya-flag-letter{
+    display: inline-block;
+
+    /*
+        Три горизонтальные полосы:
+        верхняя — белая,
+        средняя — синяя,
+        нижняя — красная.
+    */
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffffff 33.333%,
+        #0039a6 33.333%,
+        #0039a6 66.666%,
+        #d52b1e 66.666%,
+        #d52b1e 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    /*
+        Белая верхняя часть буквы остаётся заметной
+        на светлых участках логотипа или карточки.
+    */
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.75));
+}
+
+.partner-card:hover .partner-card-name{
+    color: rgb(245, 166, 35);
+}
+
+
+
+/* ==================== АНИМАЦИЯ ==================== */
+
+@keyframes partnersFadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer{
+    background: linear-gradient(
+        180deg,
+        #14100d 0%,
+        rgb(120, 66, 20) 60%,
+        rgb(203, 101, 13) 100%
+    );
+}
+
+/* ==================== ПЛАНШЕТЫ ==================== */
+
+@media (max-width: 1024px){
+    .partners-main-block{
+        min-height: 280px;
+        padding: 50px 6%;
+    }
+
+    .partners-main-block-text h1{
+        font-size: 38px;
+    }
+
+    .partners-grid-block{
+        padding: 60px 6% 80px;
+    }
+
+    .partners-category{
+        margin-bottom: 70px;
+    }
+
+    .partners-category-title{
+        font-size: 30px;
+    }
+
+    .partners-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+    }
+
+    .partner-card-logo{
+        height: 110px;
+        border-radius: 36px;
+    }
+
+    .partner-card-logo img,
+    .partner-card-logo-empty{
+        border-radius: 36px;
+    }
+}
+
+/* ==================== ТЕЛЕФОНЫ / ПЛАНШЕТЫ ==================== */
+
+@media (max-width: 768px){
+    .partners-main-block{
+        min-height: 220px;
+        padding: 40px 6%;
+    }
+
+    .partners-main-block::before{
+        font-size: 160px;
+    }
+
+    .partners-main-block-text h1{
+        font-size: 30px;
+    }
+
+    .partners-main-block-text p{
+        font-size: 15px;
+    }
+
+    .partners-grid-block{
+        padding: 45px 6% 60px;
+    }
+
+    .partners-category{
+        margin-bottom: 55px;
+    }
+
+    .partners-category-title{
+        margin-bottom: 34px;
+        font-size: 26px;
+    }
+
+    .partners-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .partner-card{
+        padding: 26px 18px 20px;
+        border-radius: 18px;
+    }
+
+    .partner-card-logo{
+        height: 90px;
+        margin-bottom: 14px;
+        border-radius: 30px;
+    }
+
+    .partner-card-logo img,
+    .partner-card-logo-empty{
+        border-radius: 30px;
+    }
+
+    .partner-card-name{
+        font-size: 13.5px;
+    }
+}
+
+/* ==================== ТЕЛЕФОНЫ ==================== */
+
+@media (max-width: 480px){
+    .partners-main-block{
+        min-height: 190px;
+        padding: 32px 5%;
+    }
+
+    .partners-main-block-text h1{
+        font-size: 24px;
+    }
+
+    .partners-main-block-text h1::after{
+        width: 60px;
+        margin-top: 14px;
+    }
+
+    .partners-main-block-text p{
+        font-size: 13.5px;
+    }
+
+    .partners-grid-block{
+        padding: 32px 5% 45px;
+    }
+
+    .partners-category{
+        margin-bottom: 45px;
+    }
+
+    .partners-category-title{
+        margin-bottom: 28px;
+        font-size: 22px;
+    }
+
+    .partners-category-title::after{
+        bottom: -10px;
+        width: 60px;
+        height: 3px;
+    }
+
+    .partners-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .partner-card{
+        padding: 18px 12px 16px;
+        border-radius: 14px;
+    }
+
+    .partner-card-logo{
+        height: 70px;
+        margin-bottom: 10px;
+        border-radius: 24px;
+    }
+
+    .partner-card-logo img,
+    .partner-card-logo-empty{
+        border-radius: 24px;
+    }
+
+    .partner-card-logo-empty span{
+        font-size: 9px;
+        letter-spacing: 0.5px;
+    }
+
+    .partner-card-name{
+        font-size: 12px;
+    }
+}
+
+/* ==================== САМЫЕ УЗКИЕ ЭКРАНЫ ==================== */
+
+@media (max-width: 360px){
+    .partners-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .partner-card-logo{
+        height: 80px;
+    }
+}
+
+/* ==================== УМЕНЬШЕНИЕ ДВИЖЕНИЯ ==================== */
+
+@media (prefers-reduced-motion: reduce){
+    .partner-card,
+    .partners-main-block-text{
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .partner-card::before{
+        display: none;
+    }
+
+    .partner-card,
+    .partner-card-logo img{
+        transition: none;
+    }
+}
+
+/* ======================================================= */
+/* == УВЕЛИЧЕНИЕ ЛОГОТИПА + СКРЫТИЕ ФОНА КАРТОЧКИ ======= */
+/* ======================================================= */
+
+@media (hover: hover) and (min-width: 1025px){
+
+    /*
+        Логотип может выйти за границы своей карточки.
+        Исходная карточка остаётся под курсором и удерживает hover.
+    */
+    .partners-grid,
+    .partner-card,
+    .partner-card-logo{
+        overflow: visible;
+    }
+
+    /*
+        Контейнер логотипа — основа для масштабирования
+        и для оранжевого свечения позади него.
+    */
+    .partner-card-logo{
+        position: relative;
+        z-index: 2;
+
+        transform-origin: center;
+
+        transition:
+            transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+            filter 0.35s ease;
+    }
+
+    /*
+        Свечение скрыто в обычном состоянии.
+        Оно находится за изображением, но выше страницы.
+    */
+    .partner-card-logo::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+
+        width: 72%;
+        height: 72%;
+
+        opacity: 0;
+        pointer-events: none;
+
+        border-radius: 50%;
+        background: radial-gradient(
+            circle,
+            rgba(255, 139, 27, 0.80) 0%,
+            rgba(223, 93, 5, 0.45) 38%,
+            rgba(223, 93, 5, 0) 72%
+        );
+
+        filter: blur(16px);
+
+        transform: translate(-50%, -50%) scale(0.6);
+
+        transition:
+            opacity 0.45s ease,
+            transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    /*
+        Исходная карточка визуально исчезает.
+        display: none и visibility: hidden не используем:
+        иначе сразу перестанет работать :hover.
+    */
+    .partner-card:hover{
+        z-index: 100;
+
+        background: transparent;
+        border-color: transparent;
+        box-shadow: none;
+    }
+
+    /*
+        Убираем блик карточки, чтобы ничего не осталось
+        позади увеличенного логотипа.
+    */
+    .partner-card:hover::before{
+        opacity: 0;
+    }
+
+    /*
+        Название компании становится прозрачным.
+        Его место в документе сохраняется — hover стабилен.
+    */
+    .partner-card:hover .partner-card-name{
+        opacity: 0;
+        color: transparent;
+    }
+
+    /*
+        Увеличивается только логотипный блок.
+    */
+    .partner-card:hover .partner-card-logo{
+        z-index: 10;
+
+        filter: brightness(1.12);
+
+        transform: scale(2);
+    }
+
+    /*
+        При увеличении проявляется подсветка.
+    */
+    .partner-card:hover .partner-card-logo::after{
+        opacity: 1;
+
+        transform: translate(-50%, -50%) scale(2.3);
+    }
+
+    /*
+        Убираем старое отдельное увеличение изображения.
+        Масштабируется уже весь .partner-card-logo.
+    */
+    .partner-card:hover .partner-card-logo img{
+        filter: brightness(1.1) grayscale(0);
+        transform: none;
+    }
+}

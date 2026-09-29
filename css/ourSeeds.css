@@ -1,0 +1,683 @@
+/* ======================================================= */
+/* ================= БАЗОВЫЕ НАСТРОЙКИ ================== */
+/* ======================================================= */
+
+main{
+    overflow: visible;
+}
+
+
+/* ======================================================= */
+/* ====================== HERO БЛОК ====================== */
+/* ======================================================= */
+
+.seeds-main-block{
+    position: relative;
+
+    width: 100%;
+    height: 380px;
+
+    overflow: hidden;
+
+    background-color: #111;
+}
+
+.seeds-main-block > img{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: right center;
+
+    filter: brightness(0.56) saturate(0.92);
+}
+
+.seeds-main-block::after{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 10, 0.88) 0%,
+            rgba(10, 10, 10, 0.58) 42%,
+            rgba(10, 10, 10, 0.18) 72%,
+            rgba(10, 10, 10, 0.10) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0.55) 100%
+        );
+}
+
+.seeds-main-block-text{
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    z-index: 2;
+
+    transform: translateY(-50%);
+}
+
+.seeds-main-block-text h1{
+    margin: 0;
+
+    color: #fff;
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    letter-spacing: 1px;
+
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+}
+
+.seeds-main-block-text h1::after{
+    content: "";
+
+    display: block;
+
+    width: 82px;
+    height: 4px;
+    margin-top: 20px;
+
+    border-radius: 999px;
+
+    background: rgb(245, 166, 35);
+}
+
+
+/* ======================================================= */
+/* ================= РАЗДЕЛЫ КАТАЛОГА =================== */
+/* ======================================================= */
+
+.seeds-category{
+    width: 100%;
+    padding: 70px 8% 42px;
+    box-sizing: border-box;
+
+    background: #171311;
+}
+
+.seeds-category-container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.seeds-category-label{
+    margin: 0 0 10px;
+
+    color: rgba(245, 166, 35, 0.80);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+}
+
+.seeds-category h2{
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0 0 25px;
+
+    color: white;
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+}
+
+.seeds-category h2::after{
+    content: "";
+
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+
+    width: 82px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        90deg,
+        rgb(223, 93, 5),
+        rgb(245, 166, 35)
+    );
+}
+
+.seeds-category-description{
+    max-width: 640px;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.75);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.seeds-category-herbs{
+    padding-top: 82px;
+
+    background: #1d1612;
+}
+
+
+/* ======================================================= */
+/* =================== КАРТОЧКИ СЕМЯН =================== */
+/* ======================================================= */
+
+.seeds-cards{
+    width: 100%;
+    padding: 76px 8%;
+    box-sizing: border-box;
+
+    background: #171311;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.seeds-cards:nth-of-type(even){
+    background: #1d1612;
+}
+
+.seeds-cards:last-of-type{
+    border-bottom: none;
+}
+
+.seeds-container-cards{
+    display: grid;
+    grid-template-columns: minmax(290px, 420px) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(36px, 5vw, 74px);
+
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+
+/* ======================================================= */
+/* ================== ЛЕВАЯ КОЛОНКА ===================== */
+/* ======================================================= */
+
+.seeds-container-cards-image{
+    position: sticky;
+    top: 96px;
+
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+    align-self: start;
+
+    border-radius: 20px;
+
+    background: rgba(0, 0, 0, 0.22);
+
+    box-shadow: 0 18px 46px rgba(0, 0, 0, 0.35);
+}
+
+.seeds-container-cards-image img{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: brightness(0.96);
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.seeds-container-cards-image img:hover{
+    filter: brightness(1);
+
+    transform: scale(1.025);
+}
+
+
+/* ======================================================= */
+/* ================== ПРАВАЯ КОЛОНКА ==================== */
+/* ======================================================= */
+
+.seeds-container-cards-content{
+    min-width: 0;
+    padding-top: 4px;
+}
+
+
+/* ======================================================= */
+/* ==================== ЗАГОЛОВОК ТОВАРА ================= */
+/* ======================================================= */
+
+.product-header{
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid rgba(245, 166, 35, 0.42);
+}
+
+.product-title{
+    margin: 0 0 9px;
+
+    color: rgb(245, 166, 35);
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.zelandiya-flag-letter{
+    display: inline-block;
+
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffffff 33.333%,
+        #0039a6 33.333%,
+        #0039a6 66.666%,
+        #d52b1e 66.666%,
+        #d52b1e 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.65));
+}
+
+.product-title sup{
+    display: inline-block;
+
+    margin-left: 3px;
+
+    color: rgba(255, 229, 176, 0.96);
+    font-family: Arial, sans-serif;
+    font-size: 0.38em;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: super;
+
+    transform: translateY(-0.08em);
+}
+
+.product-subtitle{
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.66);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 14px;
+    line-height: 1.35;
+    letter-spacing: 1.4px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ======================================================= */
+/* ===================== ТЕКСТ И СПИСКИ ================= */
+/* ======================================================= */
+
+.seeds-container-cards-description,
+.seeds-container-cards-features,
+.seeds-container-cards-recommendations{
+    margin-bottom: 28px;
+}
+
+.p-bold{
+    margin: 0 0 12px;
+
+    color: rgb(245, 166, 35);
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+.features-list{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.features-list li{
+    position: relative;
+
+    min-width: 0;
+    margin: 0;
+    padding: 11px 0 11px 24px;
+
+    color: rgba(255, 255, 255, 0.87);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.features-list li::before{
+    content: "";
+
+    position: absolute;
+    top: 20px;
+    left: 2px;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: rgb(245, 166, 35);
+}
+
+.features-list strong{
+    color: #fff;
+    font-family: "Avenir-Bold", sans-serif;
+    font-weight: normal;
+}
+
+
+/* ======================================================= */
+/* ===================== НИЖНИЙ БЛОК ==================== */
+/* ======================================================= */
+
+.seeds-container-cards-guarantee{
+    margin-top: 30px;
+    padding: 20px 24px;
+
+    border: 1px solid rgba(245, 166, 35, 0.48);
+    border-radius: 14px;
+
+    background: rgba(245, 166, 35, 0.10);
+}
+
+.seeds-container-cards-guarantee .main-p{
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.94);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* ======================================================= */
+/* ======================== FOOTER ======================= */
+/* ======================================================= */
+
+.footer{
+    background: linear-gradient(
+        180deg,
+        #171311 0%,
+        rgb(120, 66, 20) 100%
+    );
+}
+
+
+/* ======================================================= */
+/* ====================== ПЛАНШЕТЫ ======================= */
+/* ======================================================= */
+
+@media (max-width: 1024px){
+    .seeds-main-block{
+        height: 340px;
+    }
+
+    .seeds-main-block > img{
+        object-position: 70% center;
+    }
+
+    .seeds-category{
+        padding: 58px 6% 36px;
+    }
+
+    .seeds-category-herbs{
+        padding-top: 68px;
+    }
+
+    .seeds-cards{
+        padding: 60px 6%;
+    }
+
+    .seeds-container-cards{
+        grid-template-columns: minmax(250px, 330px) minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    .seeds-container-cards-image{
+        top: 84px;
+        aspect-ratio: 4 / 5;
+    }
+
+    .features-list{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .product-title{
+        font-size: 32px;
+    }
+}
+
+
+/* ======================================================= */
+/* ======================= ТЕЛЕФОНЫ ====================== */
+/* ======================================================= */
+
+@media (max-width: 768px){
+    .seeds-main-block{
+        height: 290px;
+    }
+
+    .seeds-main-block > img{
+        object-position: 68% center;
+
+        filter: brightness(0.58) saturate(0.95);
+    }
+
+    .seeds-main-block-text{
+        left: 6%;
+    }
+
+    .seeds-main-block-text h1{
+        font-size: 34px;
+    }
+
+    .seeds-category{
+        padding: 46px 6% 30px;
+    }
+
+    .seeds-category h2{
+        margin-bottom: 21px;
+
+        font-size: 32px;
+    }
+
+    .seeds-category-description{
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .seeds-category-herbs{
+        padding-top: 55px;
+    }
+
+    .seeds-cards{
+        padding: 46px 6%;
+    }
+
+    .seeds-container-cards{
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .seeds-container-cards-image{
+        position: static;
+
+        width: 100%;
+        max-width: 430px;
+        aspect-ratio: 4 / 5;
+        margin: 0 auto;
+
+        border-radius: 16px;
+    }
+
+    .seeds-container-cards-image img{
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+
+        border-radius: 0;
+    }
+
+    .product-header{
+        margin-bottom: 24px;
+        padding-bottom: 18px;
+    }
+
+    .product-title{
+        font-size: 29px;
+    }
+
+    .product-subtitle{
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .features-list{
+        grid-template-columns: 1fr;
+    }
+
+    .features-list li{
+        font-size: 14.5px;
+    }
+
+    .seeds-container-cards-guarantee{
+        margin-top: 26px;
+    }
+}
+
+
+/* ======================================================= */
+/* =================== ОБЫЧНЫЕ ТЕЛЕФОНЫ ================= */
+/* ======================================================= */
+
+@media (max-width: 480px){
+    .seeds-main-block{
+        height: 240px;
+    }
+
+    .seeds-main-block-text{
+        left: 5%;
+
+        max-width: 85%;
+    }
+
+    .seeds-main-block-text h1{
+        font-size: 26px;
+    }
+
+    .seeds-main-block-text h1::after{
+        width: 58px;
+        height: 3px;
+        margin-top: 15px;
+    }
+
+    .seeds-category{
+        padding: 36px 5% 25px;
+    }
+
+    .seeds-category-label{
+        margin-bottom: 8px;
+
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .seeds-category h2{
+        margin-bottom: 18px;
+
+        font-size: 27px;
+    }
+
+    .seeds-category h2::after{
+        bottom: -10px;
+
+        width: 60px;
+        height: 3px;
+    }
+
+    .seeds-category-description{
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .seeds-category-herbs{
+        padding-top: 46px;
+    }
+
+    .seeds-cards{
+        padding: 34px 5%;
+    }
+
+    .seeds-container-cards{
+        gap: 22px;
+    }
+
+    .seeds-container-cards-image{
+        max-width: 100%;
+
+        border-radius: 14px;
+    }
+
+    .product-title{
+        font-size: 25px;
+    }
+
+    .p-bold{
+        font-size: 16px;
+    }
+
+    .features-list li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        font-size: 13.5px;
+        line-height: 1.5;
+    }
+
+    .seeds-container-cards-guarantee{
+        padding: 18px;
+
+        border-radius: 12px;
+    }
+
+    .seeds-container-cards-guarantee .main-p{
+        font-size: 14px;
+    }
+}

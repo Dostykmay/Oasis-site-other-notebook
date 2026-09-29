@@ -1,0 +1,676 @@
+/* ======================================================= */
+/* ======================== HEADER ======================= */
+/* ======================================================= */
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 70px;
+
+    background-color: rgba(0, 0, 0, 0.72);
+
+    z-index: 1000;
+}
+
+.nav-container{
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    width: 100%;
+    margin: 0;
+    padding: 14px 0;
+
+    list-style: none;
+}
+
+.menu-item{
+    position: relative;
+
+    display: block;
+
+    margin: 0;
+
+    background-color: rgba(233, 93, 5, 0.58);
+
+    border: 1px solid rgba(223, 93, 5, 0.9);
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.22),
+        0 0 22px 5px rgba(255, 255, 255, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.menu-item:hover{
+    background-color: rgba(190, 70, 7, 0.82);
+
+    transform: scale(1.05);
+}
+
+
+/* ======================================================= */
+/* ================= КНОПКА ХК «БУРАН» ================== */
+/* ======================================================= */
+
+.menu-item:has(.buran-menu-link){
+    background: linear-gradient(
+        135deg,
+        rgba(13, 69, 128, 0.96),
+        rgba(26, 120, 204, 0.96)
+    );
+
+    border-color: rgba(142, 208, 255, 0.96);
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.28),
+        0 0 22px 4px rgba(91, 181, 255, 0.26);
+}
+
+.menu-item:has(.buran-menu-link):hover{
+    background: linear-gradient(
+        135deg,
+        rgba(20, 94, 170, 1),
+        rgba(45, 145, 228, 1)
+    );
+}
+
+.buran-menu-link{
+    position: relative;
+}
+
+.buran-menu-link::before{
+    content: "❄";
+
+    margin-right: 4px;
+
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 15px;
+}
+
+
+/* ======================================================= */
+/* ============= ОСНОВНЫЕ ССЫЛКИ И SUMMARY ============== */
+/* ======================================================= */
+
+.menu-a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    width: 150px;
+    min-height: 40px;
+    padding: 0 10px;
+    box-sizing: border-box;
+
+    color: white;
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: 17px;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+
+    border: none;
+    border-radius: inherit;
+
+    background: transparent;
+}
+
+
+/* ======================================================= */
+/* ================= ВЫПАДАЮЩИЕ СПИСКИ ================= */
+/* ======================== ПК =========================== */
+/* ======================================================= */
+
+.menu-drop-down-list{
+    position: relative;
+
+    width: 100%;
+}
+
+.menu-drop-down-list summary{
+    list-style: none;
+}
+
+.menu-drop-down-list summary::-webkit-details-marker{
+    content: "";
+    display: none;
+}
+
+.menu-drop-down-list summary.menu-a{
+    cursor: pointer;
+    user-select: none;
+}
+
+.dropdown-arrow{
+    display: inline-block;
+    flex: 0 0 auto;
+
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+    margin-left: 5px;
+
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+
+    transform: rotate(45deg);
+
+    transition: transform 0.25s ease;
+}
+
+.menu-drop-down-list[open] .dropdown-arrow{
+    transform: rotate(225deg);
+}
+
+/*
+    Это твой исходный ПК-вариант.
+    Оставлен без изменений.
+*/
+.menu-drop-down-list-parts{
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+
+    z-index: 1100;
+
+    width: 100%;
+    min-width: 190px;
+    padding: 0;
+}
+
+.menu-drop-down-list-parts a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 40px;
+    margin-top: 8px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+
+    color: white;
+    font-family: "Avenir-Light", sans-serif;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+
+    background-color: rgba(70, 31, 9, 0.98);
+
+    border: 1px solid rgba(233, 93, 5, 0.92);
+    border-radius: 6px;
+
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.45);
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.menu-drop-down-list-parts a:hover,
+.menu-drop-down-list-parts a:focus{
+    background-color: rgba(175, 70, 8, 0.98);
+
+    outline: none;
+
+    transform: scale(1.03);
+}
+
+
+/* ======================================================= */
+/* ======================== FOOTER ======================= */
+/* ======================================================= */
+
+.footer{
+    width: 100%;
+    min-height: 250px;
+
+    background: linear-gradient(
+        180deg,
+        rgb(132, 129, 128) 0%,
+        rgb(183, 81, 14) 80%
+    );
+}
+
+.main-container-footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    min-height: 250px;
+    padding-left: 90px;
+}
+
+.information-footer{
+    grid-column: 1;
+    align-self: center;
+
+    width: 250px;
+    margin-top: 10px;
+}
+
+.logo-footer{
+    grid-column: 3;
+    justify-self: end;
+
+    margin-top: 10px;
+    margin-right: 60px;
+}
+
+.logo-footer img{
+    max-height: 230px;
+    min-height: 230px;
+    margin: 0;
+    padding: 0;
+
+    object-fit: cover;
+}
+
+.information-footer-h1{
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: white;
+    font-family: "Avenir-Bold", sans-serif;
+}
+
+.information-footer-contact{
+    display: inline-block;
+
+    color: rgb(218, 212, 212);
+    font-family: "Avenir-Light", sans-serif;
+    font-size: 20px;
+}
+
+
+/* ======================================================= */
+/* ====================== ГАМБУРГЕР ====================== */
+/* ======================================================= */
+
+.burger-checkbox{
+    display: none;
+}
+
+.burger-label{
+    display: none;
+}
+
+
+/* ======================================================= */
+/* ====================== ПЛАНШЕТЫ ======================= */
+/* ======================================================= */
+
+@media (max-width: 1024px){
+    .nav-menu{
+        gap: 8px;
+    }
+
+    .menu-a{
+        width: 120px;
+        font-size: 15px;
+    }
+}
+
+
+/* ======================================================= */
+/* ======================= ТЕЛЕФОНЫ ====================== */
+/* ======================================================= */
+
+@media (max-width: 768px){
+    /* Шапка без фоновой чёрной полосы */
+    .header{
+        position: fixed;
+        top: 14px;
+        left: 14px;
+
+        width: auto;
+        min-height: 0;
+        height: auto;
+        padding: 0;
+
+        background: transparent;
+
+        z-index: 1000;
+    }
+
+    .nav-container{
+        position: relative;
+
+        display: flex;
+        align-items: center;
+
+        width: auto;
+        padding: 0;
+    }
+
+    /* Кнопка-гамбургер */
+    .burger-label{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+
+        width: 46px;
+        height: 46px;
+        padding: 10px;
+        box-sizing: border-box;
+
+        background: rgba(35, 19, 10, 0.93);
+
+        border: 1px solid rgba(233, 93, 5, 0.95);
+        border-radius: 12px;
+
+        box-shadow:
+            0 5px 15px rgba(0, 0, 0, 0.45),
+            0 0 14px rgba(233, 93, 5, 0.20);
+
+        cursor: pointer;
+
+        z-index: 1200;
+
+        transition:
+            background-color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    .burger-label:hover{
+        background: rgba(88, 38, 11, 0.96);
+
+        transform: scale(1.04);
+    }
+
+    .burger-label span{
+        display: block;
+
+        width: 100%;
+        height: 3px;
+
+        background-color: white;
+
+        border-radius: 2px;
+
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+    }
+
+    .burger-checkbox:checked ~ .burger-label span:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger-checkbox:checked ~ .burger-label span:nth-child(2){
+        opacity: 0;
+    }
+
+    .burger-checkbox:checked ~ .burger-label span:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Сам контейнер меню остаётся прозрачным */
+    .nav-menu{
+        position: absolute;
+        top: 58px;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 10px;
+
+        width: min(320px, calc(100vw - 28px));
+        max-height: calc(100vh - 80px);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        overflow-y: auto;
+
+        background: transparent;
+
+        border: none;
+    }
+
+    .burger-checkbox:checked ~ .nav-menu{
+        display: flex;
+    }
+
+    /* Обычные мобильные пункты */
+    .menu-item{
+        display: block;
+
+        width: 100%;
+        margin: 0;
+
+        background-color: rgba(48, 25, 12, 0.97);
+
+        border-color: rgba(233, 93, 5, 0.98);
+
+        box-shadow:
+            0 6px 16px rgba(0, 0, 0, 0.54),
+            0 0 10px rgba(233, 93, 5, 0.10);
+
+        transition:
+            background-color 0.25s ease,
+            border-radius 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .menu-item:hover{
+        background-color: rgba(48, 25, 12, 0.97);
+
+        transform: none;
+    }
+
+    .menu-a{
+        width: 100%;
+        min-height: 46px;
+        height: auto;
+
+        font-size: 16px;
+    }
+
+    /*
+        Когда открыт раздел:
+        .menu-item становится единым большим блоком,
+        а верхняя кнопка визуально соединяется с внутренним меню.
+    */
+    .menu-item:has(.menu-drop-down-list[open]){
+        overflow: hidden;
+
+        background: linear-gradient(
+            180deg,
+            rgba(78, 38, 16, 0.99) 0%,
+            rgba(42, 20, 10, 0.99) 100%
+        );
+
+        border-color: rgba(245, 144, 37, 0.95);
+
+        box-shadow:
+            0 10px 20px rgba(0, 0, 0, 0.60),
+            0 0 16px rgba(233, 93, 5, 0.18);
+    }
+
+    .menu-drop-down-list[open] > summary.menu-a{
+        color: #fff3e6;
+
+        background: rgba(190, 74, 10, 0.26);
+
+        border-bottom: 1px solid rgba(245, 144, 37, 0.38);
+        border-radius: 0;
+    }
+
+    /*
+        Для телефона подменю — не отдельная абсолютная панель,
+        а внутренняя секция раскрытой карточки.
+    */
+    .menu-drop-down-list-parts{
+        position: static;
+
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 9px 10px 11px;
+        box-sizing: border-box;
+
+        background: rgba(10, 5, 3, 0.25);
+
+        border: none;
+
+        box-shadow: none;
+    }
+
+    /*
+        Подпункты остаются отдельными компактными кнопками,
+        но фон под ними общий и расположен ниже вкладки.
+    */
+    .menu-drop-down-list-parts a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        min-height: 40px;
+        margin: 0;
+        padding: 8px 14px;
+        box-sizing: border-box;
+
+        color: rgba(255, 255, 255, 0.94);
+        font-family: "Avenir-Light", sans-serif;
+        font-size: 14px;
+        line-height: 1.25;
+        text-align: center;
+        text-decoration: none;
+
+        background: rgba(115, 52, 14, 0.80);
+
+        border: 1px solid rgba(245, 144, 37, 0.55);
+        border-radius: 7px;
+
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.28);
+
+        transition:
+            background-color 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    .menu-drop-down-list-parts a:hover,
+    .menu-drop-down-list-parts a:focus{
+        color: white;
+
+        background: rgba(170, 72, 10, 0.96);
+
+        border-color: rgba(255, 197, 117, 0.90);
+
+        outline: none;
+
+        transform: none;
+    }
+
+    /* Синяя кнопка «Буран» */
+    .menu-item:has(.buran-menu-link){
+        background: linear-gradient(
+            135deg,
+            rgba(12, 62, 117, 0.98),
+            rgba(24, 110, 191, 0.98)
+        );
+
+        border-color: rgba(142, 208, 255, 0.96);
+
+        box-shadow:
+            0 6px 16px rgba(0, 0, 0, 0.56),
+            0 0 16px rgba(72, 170, 255, 0.23);
+    }
+
+    .menu-item:has(.buran-menu-link):hover{
+        background: linear-gradient(
+            135deg,
+            rgba(12, 62, 117, 0.98),
+            rgba(24, 110, 191, 0.98)
+        );
+    }
+
+    /* Footer на телефонах */
+    .footer{
+        min-height: 0;
+        padding: 30px 0;
+    }
+
+    .main-container-footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        min-height: 0;
+        padding-left: 0;
+
+        text-align: center;
+    }
+
+    .information-footer{
+        width: 90%;
+        margin-top: 0;
+    }
+
+    .logo-footer{
+        margin: 0;
+    }
+
+    .logo-footer img{
+        max-height: 140px;
+        min-height: auto;
+    }
+
+    .information-footer-contact{
+        display: block;
+
+        font-size: 16px;
+    }
+}
+
+
+/* ======================================================= */
+/* ================= УЗКИЕ ТЕЛЕФОНЫ ===================== */
+/* ======================================================= */
+
+@media (max-width: 400px){
+    .information-footer-h1{
+        font-size: 20px;
+    }
+
+    .information-footer-contact{
+        font-size: 14px;
+    }
+
+    .menu-a{
+        font-size: 15px;
+    }
+}

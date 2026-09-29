@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Описание сайта O.A.S.I.S">
+
+    <title>O.A.S.I.S - корпоративный сайт</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- defer говорит что скрипт можно запускать в фоновом режиме, а не ждать его загрузки -->
+    <script src="js/include.js" defer></script>
+
+    <style>
+        .footer{
+            background: linear-gradient(
+                180deg,
+                rgb(73, 77, 78) 0%,
+                rgb(194, 70, 8)
+            );
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- ============================================== -->
+        <!-- ГЛАВНЫЙ БЛОК                                  -->
+        <!-- ============================================== -->
+        <section class="index-main-block">
+            <img
+                class="index-main-block-fon"
+                src="resource/resource/pole/pole2-converted.webp"
+                alt="Маскот О.А.З.И.С">
+
+            <img
+                class="index-main-block-logo"
+                src="resource/resource/logo.png"
+                alt="Логотип О.А.З.И.С">
+
+            <div class="index-main-block-text">
+                <h1>О.А.З.И.С</h1>
+                <p>Органическое адаптивное земледелие и семеноводство</p>
+            </div>
+            <div class="index-main-block-partners">
+                <img
+                    src="resource/resource/logo/logo1-converted.webp"
+                    alt="Логотип Сделано в Воронеже"
+                    loading="lazy"
+                    decoding="async">
+
+                <img
+                    src="resource/resource/logo/logo2-converted.webp"
+                    alt="Логотип Сделано в России"
+                    loading="lazy"
+                    decoding="async">
+
+                <img
+                    src="resource/resource/logo/logo3-converted.webp"
+                    alt="Логотип Воронежское качество"
+                    loading="lazy"
+                    decoding="async">
+            </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- БЛОК О КОМПАНИИ                               -->
+        <!-- ============================================== -->
+        <section class="index-essence-company">
+            <p>
+                О.А.З.И.С — это не просто селекционно-семеноводческая компания.
+                У нас своя земля и техника, своя селекция, свое производство.
+                Мы растим с душой, работаем с идеями, движемся к новым горизонтам
+                и свершениям.
+            </p>
+
+            <img
+                src="resource/resource/dragon1.webp"
+                alt="Маскот О.А.З.И.С">
+        </section>
+
+        <!-- ============================================== -->
+        <!-- ГАЛЕРЕЯ: НАША БАЗА                            -->
+        <!-- ============================================== -->
+        <section class="index-photo">
+            <div class="index-photo-container">
+                <h2>Наша база</h2>
+
+                <!-- Checkbox отвечает за показ фото 7–15 -->
+                <input
+                    type="checkbox"
+                    id="show-more-photos"
+                    class="show-more-checkbox">
+
+                <div class="index-photo-grid" id="galleryGrid">
+                    <!-- Первые 6 фото видны сразу: две строки по 3 -->
+                    <div class="index-photo-item">
+                        <img
+                            src="resource/resource/pole/pole1-converted.webp"
+                            alt="Наша база — фотография 1"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item">
+                        <img
+                            src="resource/resource/pole/pole2-converted.webp"
+                            alt="Наша база — фотография 2"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item">
+                        <img
+                            src="resource/resource/pole/pole3-converted.webp"
+                            alt="Наша база — фотография 3"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item">
+                        <img
+                            src="resource/resource/pole/pole4-converted.webp"
+                            alt="Наша база — фотография 4"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item">
+                        <img
+                            src="resource/resource/pole/pole5-converted.webp"
+                            alt="Наша база — фотография 5"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item">
+                        <img
+                            src="resource/resource/pole/pole6-converted.webp"
+                            alt="Наша база — фотография 6"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <!-- Фото 7–15 открываются кнопкой -->
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole7-converted.webp"
+                            alt="Наша база — фотография 7"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole8-converted.webp"
+                            alt="Наша база — фотография 8"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole9-converted.webp"
+                            alt="Наша база — фотография 9"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole10-converted.webp"
+                            alt="Наша база — фотография 10"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole11-converted.webp"
+                            alt="Наша база — фотография 11"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole12-converted.webp"
+                            alt="Наша база — фотография 12"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole13-converted.webp"
+                            alt="Наша база — фотография 13"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole14-converted.webp"
+                            alt="Наша база — фотография 14"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+
+                    <div class="index-photo-item index-photo-item-extra">
+                        <img
+                            src="resource/resource/pole/pole15-converted.webp"
+                            alt="Наша база — фотография 15"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+                </div>
+
+                <label
+                    for="show-more-photos"
+                    class="index-photo-button">
+
+                    <span class="index-photo-button-text index-photo-button-show">
+                        Показать ещё
+                    </span>
+
+                    <span class="index-photo-button-text index-photo-button-hide">
+                        Скрыть
+                    </span>
+
+                    <span
+                        class="index-photo-button-arrow"
+                        aria-hidden="true">
+                        →
+                    </span>
+                </label>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>

@@ -1,0 +1,660 @@
+/* ======================================================= */
+/* =================== ГЛАВНЫЙ БЛОК ===================== */
+/* ======================================================= */
+
+.index-main-block{
+    position: relative;
+
+    width: 100%;
+    height: 700px;
+
+    overflow: visible;
+}
+
+.index-main-block::before{
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        180deg,
+        rgba(223, 93, 5, 0.85) 0%,
+        rgba(223, 93, 5, 0.40) 25%,
+        rgba(213, 217, 220, 0) 60%
+    );
+}
+
+.index-main-block-fon{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.3);
+}
+
+.index-main-block::after{
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 200px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(30, 32, 33)
+    );
+
+    filter: brightness(0.8);
+}
+
+.index-main-block-logo{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    z-index: 3;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    filter: brightness(0.8);
+
+    transform: translate(-50%, -50%);
+}
+
+.index-main-block-text{
+    position: absolute;
+    top: 60%;
+    left: 51%;
+    z-index: 3;
+
+    height: 400px;
+    margin-top: 100px;
+
+    text-align: center;
+
+    transform: translate(-50%, -50%);
+}
+
+.index-main-block-text h1{
+    margin-bottom: 0;
+    padding: 0;
+
+    color: white;
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: 100px;
+    letter-spacing: 10px;
+}
+
+.index-main-block-text p{
+    margin-top: 0;
+
+    color: rgba(255, 255, 255, 0.85);
+    font-family: "Avenir-Light", sans-serif;
+    font-size: 20px;
+}
+
+
+/* ======================================================= */
+/* ============ ЛОГОТИПЫ ВНИЗУ ПЕРВОГО БЛОКА ============ */
+/* ======================================================= */
+
+/*
+    Все логотипы имеют одинаковый размер области 210 × 110px.
+    Центральный логотип остаётся овалом, но не становится меньше.
+*/
+.index-main-block-partners{
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 54px;
+
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+
+    transform: translateX(-50%);
+}
+
+.index-main-block-partners img{
+    display: block;
+
+    width: 210px;
+    height: 110px;
+
+    object-fit: contain;
+    object-position: center;
+
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.70));
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+/*
+    Центральный логотип расположен в области того же размера,
+    но обрезается по форме горизонтального овала.
+*/
+.index-main-block-partners img:nth-child(2){
+    width: 210px;
+    height: 110px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50% / 50%;
+
+    clip-path: ellipse(50% 50% at 50% 50%);
+}
+
+@media (hover: hover){
+    .index-main-block-partners img:hover{
+        position: relative;
+        z-index: 20;
+
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.80));
+
+        transform: translateY(-4px) scale(1.9);
+    }
+}
+
+
+/* ======================================================= */
+/* ================= БЛОК О КОМПАНИИ ==================== */
+/* ======================================================= */
+
+.index-essence-company{
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    gap: 90px;
+
+    width: 100%;
+    padding: 60px 70px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        180deg,
+        rgb(30, 32, 33) 0%,
+        rgb(55, 58, 59) 100%
+    );
+}
+
+.index-essence-company p{
+    display: inline-block;
+
+    max-width: 800px;
+
+    color: rgb(210, 202, 202);
+    font-family: "Avenir-Light", sans-serif;
+    font-size: 42px;
+    line-height: 1.3;
+}
+
+.index-essence-company img{
+    width: 450px;
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+/* ======================================================= */
+/* =================== БЛОК ГАЛЕРЕИ ===================== */
+/* ======================================================= */
+
+.index-photo{
+    width: 100%;
+    min-height: 500px;
+    padding: 60px 60px 40px;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        180deg,
+        rgb(55, 58, 59) 0%,
+        rgb(73, 77, 78) 15%
+    );
+}
+
+.index-photo-container{
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.index-photo-container h2{
+    margin: 0 0 30px;
+
+    color: rgb(255, 255, 255);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 36px;
+    text-align: center;
+}
+
+.index-photo-grid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.index-photo-item{
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.30);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.index-photo-item:hover{
+    z-index: 2;
+
+    box-shadow: 0 12px 28px rgba(223, 93, 5, 0.45);
+
+    transform: scale(1.08);
+}
+
+.index-photo-item img{
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.4s ease;
+}
+
+.index-photo-item:hover img{
+    transform: scale(1.05);
+}
+
+
+/* ======================================================= */
+/* ================== ПОКАЗАТЬ ЕЩЁ ФОТО ================= */
+/* ======================================================= */
+
+.show-more-checkbox{
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.index-photo-item-extra{
+    display: none;
+}
+
+.show-more-checkbox:checked
+~ .index-photo-grid
+.index-photo-item-extra{
+    display: block;
+}
+
+
+/* ======================================================= */
+/* =================== КНОПКА ГАЛЕРЕИ =================== */
+/* ======================================================= */
+
+.index-photo-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: fit-content;
+    min-height: 30px;
+    margin: 0 auto;
+    padding: 15px 40px;
+    box-sizing: content-box;
+
+    color: rgb(255, 255, 255);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 18px;
+
+    cursor: pointer;
+    user-select: none;
+
+    border: 2px solid transparent;
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        rgb(240, 180, 143),
+        rgb(255, 120, 30)
+    );
+
+    box-shadow: 0 4px 15px rgba(233, 93, 5, 0.30);
+
+    transition:
+        color 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.index-photo-button:hover{
+    color: rgb(233, 93, 5);
+
+    border-color: rgb(233, 93, 5);
+
+    background: white;
+
+    transform: translateY(-2px);
+}
+
+.index-photo-button-show{
+    display: inline;
+}
+
+.index-photo-button-hide{
+    display: none;
+}
+
+.show-more-checkbox:checked
+~ .index-photo-button
+.index-photo-button-show{
+    display: none;
+}
+
+.show-more-checkbox:checked
+~ .index-photo-button
+.index-photo-button-hide{
+    display: inline;
+}
+
+.index-photo-button-arrow{
+    font-size: 24px;
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.index-photo-button:hover .index-photo-button-arrow{
+    transform: translateX(5px);
+}
+
+.show-more-checkbox:checked
+~ .index-photo-button
+.index-photo-button-arrow{
+    transform: rotate(90deg);
+}
+
+.show-more-checkbox:checked
+~ .index-photo-button:hover
+.index-photo-button-arrow{
+    transform: rotate(90deg) translateX(2px);
+}
+
+
+/* ======================================================= */
+/* ======================== FOOTER ======================= */
+/* ======================================================= */
+
+.footer{
+    background: linear-gradient(
+        180deg,
+        rgb(73, 77, 78) 0%,
+        rgb(194, 70, 8) 100%
+    );
+}
+
+
+/* ======================================================= */
+/* ====================== ПЛАНШЕТЫ ======================= */
+/* ======================================================= */
+
+@media (max-width: 1024px){
+    .index-main-block{
+        height: 450px;
+    }
+
+    .index-main-block-logo{
+        height: 150px;
+    }
+
+    .index-main-block-text h1{
+        font-size: 64px;
+        letter-spacing: 6px;
+    }
+
+    .index-main-block-text p{
+        font-size: 18px;
+    }
+
+    .index-main-block-partners{
+        bottom: 24px;
+        gap: 28px;
+        padding: 0 24px;
+    }
+
+    .index-main-block-partners img,
+    .index-main-block-partners img:nth-child(2){
+        width: 130px;
+        height: 68px;
+    }
+
+    .index-essence-company{
+        gap: 40px;
+        padding: 50px 40px;
+    }
+
+    .index-essence-company p{
+        font-size: 28px;
+    }
+
+    .index-essence-company img{
+        width: 320px;
+        height: 320px;
+    }
+
+    .index-photo-grid{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .index-photo-item{
+        height: 250px;
+    }
+}
+
+
+/* ======================================================= */
+/* ======================= ТЕЛЕФОНЫ ====================== */
+/* ======================================================= */
+
+@media (max-width: 768px){
+    .index-main-block{
+        height: 380px;
+    }
+
+    .index-main-block-logo{
+        top: 25%;
+
+        height: 100px;
+    }
+
+    .index-main-block-text{
+        top: 65%;
+
+        width: 90%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .index-main-block-text h1{
+        font-size: 38px;
+        letter-spacing: 3px;
+    }
+
+    .index-main-block-text p{
+        padding: 0 10px;
+
+        font-size: 15px;
+    }
+
+    .index-main-block-partners{
+        bottom: 18px;
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .index-main-block-partners img,
+    .index-main-block-partners img:nth-child(2){
+        width: 88px;
+        height: 46px;
+    }
+
+    .index-essence-company{
+        flex-direction: column;
+        gap: 25px;
+
+        padding: 40px 20px;
+
+        text-align: center;
+    }
+
+    .index-essence-company p{
+        max-width: 100%;
+
+        font-size: 20px;
+    }
+
+    .index-essence-company img{
+        width: 100%;
+        max-width: 320px;
+        height: 260px;
+    }
+
+    .index-photo{
+        padding: 40px 20px 30px;
+    }
+
+    .index-photo-container h2{
+        font-size: 26px;
+    }
+
+    .index-photo-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+
+        margin-bottom: 25px;
+    }
+
+    .index-photo-item{
+        height: 210px;
+
+        border-radius: 14px;
+    }
+
+    .index-photo-button{
+        padding: 12px 28px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* ======================================================= */
+/* ================= УЗКИЕ ТЕЛЕФОНЫ ===================== */
+/* ======================================================= */
+
+@media (max-width: 400px){
+    .index-main-block{
+        height: 320px;
+    }
+
+    .index-main-block-logo{
+        height: 80px;
+    }
+
+    .index-main-block-text h1{
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+
+    .index-main-block-text p{
+        font-size: 13px;
+    }
+
+    .index-main-block-partners{
+        bottom: 14px;
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    .index-main-block-partners img,
+    .index-main-block-partners img:nth-child(2){
+        width: 65px;
+        height: 34px;
+    }
+
+    .index-essence-company p{
+        font-size: 17px;
+    }
+
+    .index-photo-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .index-photo-item{
+        height: 250px;
+    }
+
+    .index-photo-button{
+        padding: 11px 24px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* ======================================================= */
+/* ================= HOVER ДЛЯ ТАЧ-НОУТБУКОВ ============ */
+/* ======================================================= */
+
+@media (max-width: 768px) and (hover: hover){
+    .index-main-block-partners img:hover{
+        transform: translateY(-3px) scale(1.08);
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Селекционная программа О.А.З.И.С «ДОННИК»: медоносная и сидеральная культура">
+
+    <title>О.А.З.И.С — Селекционная программа «ДОННИК»</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/program-template.css">
+
+    <script src="js/include.js" defer></script>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main>
+        <!-- Главное фото: не lazy, так как оно находится на первом экране -->
+        <section class="program-hero" aria-labelledby="program-title">
+             <!-- КНОПКА НАЗАД: ведёт на каталог прочих культур -->
+            <a class="program-back-link" href="otherPlants.html">
+                <span class="program-back-link__arrow" aria-hidden="true">←</span>
+                <span>Ко всем медоносным травам</span>
+            </a>
+
+            
+            <img
+                class="program-hero-photo"
+                src="resource/Donnik_page/donnil_fon.webp"
+                alt="Селекционная программа донника О.А.З.И.С"
+                fetchpriority="high"
+                decoding="async">
+
+            <div class="program-hero-text">
+                <h1 id="program-title">ДОННИК</h1>
+            </div>
+        </section>
+
+        <!-- Фотография ниже первого экрана: загружается при приближении к блоку -->
+        <section class="program-description" aria-labelledby="description-title">
+            <div class="program-description-content">
+
+                <p>
+                    Донник — ценная медоносная и сидеральная культура,
+                    занимающая важное место в современном кормопроизводстве и агроэкологии.
+                    Наша селекционная программа направлена на создание сортов донника
+                    с высокой нектарной продуктивностью, обеспечивающих стабильный взяток
+                    для пчёл даже в засушливых условиях.
+                </p>
+
+                <p>
+                    Донник — один из лучших сидератов: его мощная корневая система
+                    разрыхляет почву на глубину до 1,5 метров, а зелёная масса,
+                    запаханная в грунт, обогащает его органикой, азотом и доступным
+                    фосфором. Растение также эффективно подавляет рост сорняков,
+                    оздоравливает почву от фитопатогенов и снижает засоление.
+                </p>
+
+                <p>
+                    Благодаря неприхотливости и засухоустойчивости донник можно
+                    выращивать в различных почвенно-климатических зонах, получая
+                    высококачественное сено, силос и ценный медоносный ресурс.
+                </p>
+            </div>
+
+            <img
+                class="program-description-photo"
+                src="resource/Donnik_page/donnik2-converted.webp"
+                alt="Цветущий донник"
+                loading="lazy"
+                decoding="async">
+        </section>
+
+        <!-- Фотография направлений: также lazy -->
+        <section class="program-directions" aria-labelledby="directions-title">
+           
+
+            <div class="program-directions-content">
+                <h2 id="directions-title">Направления селекции</h2>
+
+                <ul class="program-directions-list">
+                    <li>Высокая нектарная продуктивность и длительное цветение</li>
+                    <li>Быстрый набор зелёной массы и кормовой ценности</li>
+                    <li>Устойчивость к засухе и неблагоприятным почвенным условиям</li>
+                    <li>Адаптация к различным срокам посева: озимая и яровая формы</li>
+                    <li>Повышение эффективности как сидеральной и фитомелиоративной культуры</li>
+                    <li>Засухоустойчивость</li>
+                    <li>Скороспелость</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+</body>
+</html>

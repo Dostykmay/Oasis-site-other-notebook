@@ -1,0 +1,522 @@
+main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================== HERO СЕКЦИЯ (полная ширина) ==================== */
+.basa-history-main-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    width: 100%;
+}
+
+.basa-history-main-block-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.basa-history-main-block-card img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+    transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.basa-history-main-block-card:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.85);
+}
+
+.basa-history-main-block-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    padding: 2rem;
+    color: white;
+}
+
+.basa-history-main-block-card-info h3 {
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.basa-history-main-block-card-info p {
+    font-family: 'Avenir-Medium', sans-serif;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* ==================== ОСНОВНОЙ БЛОК (сплошной фон на всю ширину) ==================== */
+.basa-history-content-block {
+    width: 100%;
+    background: linear-gradient(180deg,
+        #0a0a0a 0%,
+        #1a1210 20%,
+        rgb(70, 45, 20) 55%,
+        rgb(120, 66, 20) 100%);
+    padding: 4rem 8% 5rem;
+    box-sizing: border-box;
+}
+
+.basa-history-content-block h1 {
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 3rem;
+    color: rgb(223, 93, 5);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+    position: relative;
+    display: inline-block;
+}
+
+.basa-history-content-block h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, rgb(223, 93, 5), rgb(245, 166, 35));
+    border-radius: 2px;
+}
+
+.basa-history-content-block-main-text {
+    font-family: 'Avenir-Medium', sans-serif;
+    font-size: 1.25rem;
+    color: rgba(240, 235, 230, 0.85);
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    border-left: 4px solid rgb(223, 93, 5);
+    padding-left: 1.5rem;
+}
+
+.basa-history-content-block-text {
+    font-family: 'Avenir-Medium', sans-serif;
+    font-size: 1.05rem;
+    color: rgba(240, 235, 230, 0.9);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+.basa-history-content-block-text strong {
+    color: rgb(245, 166, 35);
+    font-weight: 700;
+}
+
+/* ==================== СТАТИСТИКА ==================== */
+.basa-history-static-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+    max-width: 1100px;
+}
+
+.static-card {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(223, 93, 5, 0.25);
+}
+
+.static-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(223, 93, 5, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.static-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.static-number {
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: rgb(223, 93, 5);
+}
+
+.static-label {
+    font-family: 'Avenir-Medium', sans-serif;
+    color: rgba(230, 225, 220, 0.85);
+    font-weight: 500;
+}
+
+/* ==================== РАЗДЕЛИТЕЛИ СЕКЦИЙ ==================== */
+.basa-history-techno,
+.basa-history-people,
+.basa-history-researches {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 1.5rem;
+    max-width: 1100px;
+}
+
+.basa-history-techno span,
+.basa-history-people span,
+.basa-history-researches span {
+    font-size: 2rem;
+}
+
+.basa-history-techno h2,
+.basa-history-people h2,
+.basa-history-researches h2 {
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 1.8rem;
+    color: rgb(223, 93, 5);
+}
+
+.basa-history-techno .line,
+.basa-history-people .line,
+.basa-history-researches .line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(223, 93, 5), transparent);
+}
+
+/* ==================== ТЕХНИКА ==================== */
+.basa-history-techno-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+    max-width: 1100px;
+}
+
+.basa-history-techno-grid-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.basa-history-techno-grid-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgb(223, 93, 5);
+    transform: translateX(6px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tech-icon {
+    font-size: 1.8rem;
+}
+
+.tech-text {
+    font-family: 'Avenir-Medium', sans-serif;
+    font-weight: 500;
+    color: rgba(240, 235, 230, 0.9);
+}
+
+.tech-text strong {
+    color: rgb(223, 93, 5);
+}
+
+/* ==================== СПИСОК-ФИЧИ ==================== */
+.basa-history-feature {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    max-width: 1100px;
+}
+
+.basa-history-feature li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.basa-history-feature li:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+}
+
+.basa-history-feature .feature-icon {
+    font-size: 1.4rem;
+    min-width: 2rem;
+}
+
+.basa-history-feature .feature-text {
+    font-family: 'Avenir-Medium', sans-serif;
+    color: rgba(240, 235, 230, 0.9);
+    line-height: 1.5;
+}
+
+/* ==================== УНИКАЛЬНЫЙ ПРОЕКТ ==================== */
+.unique-project {
+    background: linear-gradient(135deg, rgb(120, 66, 20), rgb(223, 93, 5));
+    border-radius: 24px;
+    padding: 2rem;
+    margin: 2rem 0;
+    max-width: 1100px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.unique-project::before {
+    content: "🌵";
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 120px;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.unique-project h3 {
+    font-family: 'Avenir-Bold', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.unique-project .basa-history-content-block-text {
+    color: rgba(255, 255, 255, 0.95);
+    max-width: none;
+}
+
+/* ==================== ФИНАЛЬНАЯ ЦИТАТА ==================== */
+.final-quote {
+    background: linear-gradient(180deg, rgb(223, 93, 5) 0%, rgb(150, 65, 15) 100%);
+    color: white;
+    padding: 2rem;
+    margin-top: 2rem;
+    max-width: 1100px;
+    border-radius: 24px;
+    text-align: center;
+    font-family: 'Avenir-Medium', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.final-quote::before {
+    content: '"';
+    font-size: 80px;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    opacity: 0.25;
+    font-family: serif;
+}
+
+.final-quote strong {
+    color: #ffdd99;
+}
+
+.footer{
+    background: linear-gradient(180deg,rgb(120, 66, 20) 0%, rgb(207, 83, 11) 100%)
+}
+
+/* ======================================================= */
+/* ===== ПЛАНШЕТЫ И МАЛЕНЬКИЕ НОУТБУКИ (до 1024px) ===== */
+/* ======================================================= */
+@media (max-width: 1024px) {
+    .basa-history-main-block-card img {
+        height: 380px;
+    }
+
+    .basa-history-content-block {
+        padding: 3.5rem 6% 4.5rem;
+    }
+
+    .basa-history-content-block h1 {
+        font-size: 2.4rem;
+    }
+
+    .basa-history-content-block-main-text {
+        font-size: 1.15rem;
+    }
+}
+
+/* ======================================================= */
+/* ===== БОЛЬШИЕ ТЕЛЕФОНЫ И ПЛАНШЕТЫ ВЕРТИКАЛЬНО (до 768px) ===== */
+/* ======================================================= */
+@media (max-width: 768px) {
+    .basa-history-main-block {
+        grid-template-columns: 1fr;
+    }
+
+    .basa-history-main-block-card img {
+        height: 300px;
+    }
+
+    .basa-history-main-block-card-info {
+        padding: 1.25rem;
+    }
+
+    .basa-history-main-block-card-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .basa-history-content-block {
+        padding: 2.5rem 6% 3.5rem;
+    }
+
+    .basa-history-content-block h1 {
+        font-size: 2rem;
+    }
+
+    .basa-history-content-block-main-text {
+        font-size: 1.05rem;
+        padding-left: 1rem;
+    }
+
+    .basa-history-content-block-text {
+        font-size: 0.95rem;
+    }
+
+    .basa-history-techno-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .basa-history-static-block {
+        grid-template-columns: 1fr;
+    }
+
+    .basa-history-techno h2,
+    .basa-history-people h2,
+    .basa-history-researches h2 {
+        font-size: 1.4rem;
+    }
+
+    .unique-project,
+    .final-quote {
+        padding: 1.5rem;
+    }
+
+    .final-quote {
+        font-size: 1.05rem;
+    }
+}
+
+/* ======================================================= */
+/* ===== ОСНОВНАЯ МАССА ТЕЛЕФОНОВ (до 480px) ===== */
+/* ======================================================= */
+@media (max-width: 480px) {
+    .basa-history-main-block-card img {
+        height: 220px;
+    }
+
+    .basa-history-main-block-card-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .basa-history-main-block-card-info p {
+        font-size: 0.8rem;
+    }
+
+    .basa-history-content-block {
+        padding: 2rem 5% 3rem;
+    }
+
+    .basa-history-content-block h1 {
+        font-size: 1.6rem;
+    }
+
+    .basa-history-content-block h1::after {
+        width: 120px;
+    }
+
+    .basa-history-content-block-main-text {
+        font-size: 0.95rem;
+        padding-left: 0.8rem;
+    }
+
+    .basa-history-content-block-text {
+        font-size: 0.9rem;
+    }
+
+    .static-card {
+        padding: 1.1rem;
+    }
+
+    .static-number {
+        font-size: 1.7rem;
+    }
+
+    .static-icon {
+        font-size: 2rem;
+    }
+
+    .basa-history-techno span,
+    .basa-history-people span,
+    .basa-history-researches span {
+        font-size: 1.5rem;
+    }
+
+    .basa-history-techno h2,
+    .basa-history-people h2,
+    .basa-history-researches h2 {
+        font-size: 1.2rem;
+    }
+
+    .basa-history-techno-grid-item {
+        padding: 0.8rem 1rem;
+    }
+
+    .tech-icon {
+        font-size: 1.4rem;
+    }
+
+    .unique-project h3 {
+        font-size: 1.2rem;
+    }
+
+    .final-quote {
+        font-size: 0.95rem;
+        padding: 1.25rem;
+    }
+}
+
+/* ======================================================= */
+/* ===== САМЫЕ УЗКИЕ ЭКРАНЫ (до 360px) ===== */
+/* ======================================================= */
+@media (max-width: 360px) {
+    .basa-history-main-block-card img {
+        height: 190px;
+    }
+
+    .basa-history-content-block h1 {
+        font-size: 1.4rem;
+    }
+
+    .basa-history-content-block-main-text {
+        font-size: 0.88rem;
+    }
+
+    .basa-history-content-block-text {
+        font-size: 0.85rem;
+    }
+
+    .static-number {
+        font-size: 1.5rem;
+    }
+}

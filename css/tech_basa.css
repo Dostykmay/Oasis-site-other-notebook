@@ -1,0 +1,955 @@
+/* ======================================================= */
+/* ==================== HERO БЛОК ======================== */
+/* ======================================================= */
+
+.techno-main-block{
+    position: relative;
+
+    width: 100%;
+    height: 480px;
+
+    overflow: hidden;
+}
+
+.techno-main_block-photo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.4) saturate(1.1);
+}
+
+.techno-main-block::after{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.2) 0%,
+        rgba(0, 0, 0, 0.75) 100%
+    );
+}
+
+.techno-main-block::before{
+    content: "⚙️";
+
+    position: absolute;
+    top: 50%;
+    right: 6%;
+    z-index: 1;
+
+    font-size: 220px;
+
+    opacity: 0.08;
+
+    pointer-events: none;
+
+    transform: translateY(-50%);
+}
+
+.techno-main-block-text{
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    z-index: 2;
+
+    max-width: 700px;
+
+    transform: translateY(-50%);
+}
+
+.techno-main-block-text h1{
+    margin: 0;
+
+    color: white;
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: 56px;
+    line-height: 1.15;
+    letter-spacing: 1px;
+
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.techno-main-block-text h1::after{
+    content: "";
+
+    display: block;
+
+    width: 90px;
+    height: 4px;
+    margin-top: 24px;
+
+    border-radius: 2px;
+
+    background: linear-gradient(
+        90deg,
+        rgb(223, 93, 5),
+        rgb(245, 166, 35)
+    );
+}
+
+
+/* ======================================================= */
+/* ================= ЛЕНТА ТЕХНИКИ ====================== */
+/* ======================================================= */
+
+main{
+    counter-reset: techno-counter;
+}
+
+.techno-info-block{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    width: 100%;
+    padding: 80px 8%;
+    box-sizing: border-box;
+
+    background: linear-gradient(
+        180deg,
+        #0a0a0a 0%,
+        #1a1210 30%,
+        rgb(70, 45, 20) 70%,
+        rgb(120, 66, 20) 100%
+    );
+
+    counter-increment: techno-counter;
+}
+
+.techno-info-block:nth-of-type(odd){
+    flex-direction: row;
+}
+
+.techno-info-block:nth-of-type(even){
+    flex-direction: row-reverse;
+}
+
+.techno-info-block:not(:last-of-type){
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* Обычное фото в блоках */
+.techno-info-block > img{
+    flex: 1 1 480px;
+
+    width: 100%;
+    max-width: 560px;
+    height: 420px;
+
+    object-fit: cover;
+
+    border-radius: 24px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+
+    filter: brightness(0.85);
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.techno-info-block:hover > img{
+    filter: brightness(1);
+
+    transform: scale(1.02);
+}
+
+
+/* ======================================================= */
+/* ======================= ТЕКСТ ========================= */
+/* ======================================================= */
+
+.techno-info-block-text{
+    position: relative;
+
+    flex: 1 1 420px;
+}
+
+.techno-info-block-text::before{
+    content: counter(techno-counter, decimal-leading-zero);
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: rgba(223, 93, 5, 0.7);
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+}
+
+.techno-info-block-text h2{
+    margin: 0 0 20px;
+
+    color: rgb(223, 93, 5);
+    font-family: "Avenir-Bold", sans-serif;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.techno-info-block-text p{
+    margin: 0 0 16px;
+
+    color: rgba(240, 235, 230, 0.9);
+    font-family: "Avenir-Medium", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.techno-info-block-text p:last-of-type{
+    margin-bottom: 0;
+}
+
+
+/* ======================================================= */
+/* ======= ВЕЕР ФОТО: ПОЧВООБРАБАТЫВАЮЩАЯ ТЕХНИКА ====== */
+/* ======================================================= */
+
+.techno-info-block-soil{
+    align-items: center;
+}
+
+.techno-fan-gallery{
+    position: relative;
+
+    flex: 0 1 530px;
+
+    width: 100%;
+    max-width: 530px;
+    height: 390px;
+}
+
+/*
+    Сбрасываем стили обычной большой фотографии:
+    все фото веера управляются отдельным классом.
+*/
+.techno-fan-gallery .techno-fan-photo{
+    position: absolute;
+
+    display: block;
+
+    width: 68%;
+    height: auto;
+    max-width: none;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 3px solid rgba(255, 255, 255, 0.78);
+    border-radius: 16px;
+
+    box-shadow:
+        0 16px 30px rgba(0, 0, 0, 0.38),
+        0 0 20px rgba(223, 93, 5, 0.10);
+
+    filter: brightness(0.9);
+
+    transition:
+        transform 0.38s ease,
+        box-shadow 0.38s ease,
+        filter 0.38s ease;
+}
+
+/* Левая фотография */
+.techno-fan-photo-one{
+    top: 56px;
+    left: 0;
+    z-index: 1;
+
+    transform: rotate(-10deg);
+}
+
+/* Центральная фотография */
+.techno-fan-photo-two{
+    top: 18px;
+    left: 16%;
+    z-index: 2;
+
+    transform: rotate(-1deg);
+}
+
+/* Правая фотография */
+.techno-fan-photo-three{
+    top: 58px;
+    right: 0;
+    z-index: 3;
+
+    transform: rotate(10deg);
+}
+
+@media (hover: hover){
+    .techno-fan-gallery:hover .techno-fan-photo-one{
+        transform: translateX(-16px) translateY(7px) rotate(-14deg);
+    }
+
+    .techno-fan-gallery:hover .techno-fan-photo-two{
+        transform: translateY(-14px) scale(1.04) rotate(0deg);
+    }
+
+    .techno-fan-gallery:hover .techno-fan-photo-three{
+        transform: translateX(16px) translateY(7px) rotate(14deg);
+    }
+
+    .techno-fan-gallery .techno-fan-photo:hover{
+        z-index: 10;
+
+        filter: brightness(1.08);
+
+        box-shadow:
+            0 22px 38px rgba(0, 0, 0, 0.52),
+            0 0 28px rgba(245, 166, 35, 0.22);
+    }
+}
+
+
+/* ======================================================= */
+/* ===== ГАЛЕРЕЯ 2 × 2: ПОСЛЕУБОРОЧНАЯ ПОДГОТОВКА ====== */
+/* ======================================================= */
+
+.techno-info-block-postharvest{
+    align-items: center;
+}
+
+.techno-postharvest-gallery{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+
+    flex: 0 1 520px;
+
+    width: 100%;
+    max-width: 520px;
+}
+
+.techno-postharvest-gallery img{
+    display: block;
+
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 14px;
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+
+    filter: brightness(0.9);
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+@media (hover: hover){
+    .techno-postharvest-gallery img:hover{
+        position: relative;
+        z-index: 1;
+
+        filter: brightness(1.08);
+
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.38);
+
+        transform: scale(1.04);
+    }
+}
+
+
+/* ======================================================= */
+/* ======================== FOOTER ======================= */
+/* ======================================================= */
+
+.footer{
+    background: linear-gradient(
+        180deg,
+        rgb(120, 66, 20) 0%,
+        rgb(203, 101, 13) 100%
+    );
+}
+
+
+/* ======================================================= */
+/* ====================== ПЛАНШЕТЫ ======================= */
+/* ======================================================= */
+
+@media (max-width: 1024px){
+    .techno-main-block{
+        height: 400px;
+    }
+
+    .techno-main-block-text h1{
+        font-size: 44px;
+    }
+
+    .techno-main-block::before{
+        font-size: 170px;
+    }
+
+    .techno-info-block{
+        gap: 40px;
+
+        padding: 70px 6%;
+    }
+
+    .techno-info-block > img{
+        height: 340px;
+    }
+
+    .techno-info-block-text h2{
+        font-size: 28px;
+    }
+
+    .techno-fan-gallery{
+        flex-basis: 430px;
+
+        max-width: 430px;
+        height: 330px;
+    }
+
+    .techno-fan-gallery .techno-fan-photo{
+        width: 70%;
+
+        border-radius: 13px;
+    }
+
+    .techno-fan-photo-one{
+        top: 50px;
+
+        transform: rotate(-9deg);
+    }
+
+    .techno-fan-photo-two{
+        top: 18px;
+        left: 15%;
+    }
+
+    .techno-fan-photo-three{
+        top: 52px;
+
+        transform: rotate(9deg);
+    }
+
+    .techno-postharvest-gallery{
+        max-width: 430px;
+        gap: 10px;
+    }
+
+    .techno-postharvest-gallery img{
+        border-radius: 12px;
+    }
+}
+
+
+/* ======================================================= */
+/* ======================= ТЕЛЕФОНЫ ====================== */
+/* ======================================================= */
+
+@media (max-width: 768px){
+    .techno-main-block{
+        height: 340px;
+    }
+
+    .techno-main-block-text{
+        left: 6%;
+
+        max-width: 88%;
+    }
+
+    .techno-main-block-text h1{
+        font-size: 32px;
+    }
+
+    .techno-main-block::before{
+        right: 3%;
+
+        font-size: 120px;
+    }
+
+    .techno-info-block,
+    .techno-info-block:nth-of-type(even),
+    .techno-info-block:nth-of-type(odd){
+        flex-direction: column;
+        gap: 30px;
+
+        padding: 50px 6%;
+    }
+
+    .techno-info-block > img{
+        width: 100%;
+        max-width: 100%;
+        height: 260px;
+
+        border-radius: 18px;
+    }
+
+    .techno-info-block-text h2{
+        font-size: 24px;
+    }
+
+    .techno-info-block-text p{
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .techno-fan-gallery{
+        flex: none;
+
+        width: 100%;
+        max-width: 520px;
+        height: 330px;
+        margin: 0 auto;
+    }
+
+    .techno-fan-gallery .techno-fan-photo{
+        width: 68%;
+
+        border-width: 2px;
+    }
+
+    .techno-postharvest-gallery{
+        flex: none;
+
+        width: 100%;
+        max-width: 560px;
+        margin: 0 auto;
+    }
+}
+
+
+/* ======================================================= */
+/* =================== ОБЫЧНЫЕ ТЕЛЕФОНЫ ================= */
+/* ======================================================= */
+
+@media (max-width: 480px){
+    .techno-main-block{
+        height: 280px;
+    }
+
+    .techno-main-block-text h1{
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+
+    .techno-main-block-text h1::after{
+        width: 60px;
+        height: 3px;
+        margin-top: 16px;
+    }
+
+    .techno-main-block::before{
+        font-size: 90px;
+    }
+
+    .techno-info-block{
+        gap: 22px;
+
+        padding: 40px 5%;
+    }
+
+    .techno-info-block > img{
+        height: 200px;
+
+        border-radius: 14px;
+    }
+
+    .techno-info-block-text h2{
+        margin-bottom: 14px;
+
+        font-size: 20px;
+    }
+
+    .techno-info-block-text p{
+        margin-bottom: 12px;
+
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .techno-info-block-text::before{
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .techno-fan-gallery{
+        height: 255px;
+    }
+
+    .techno-fan-gallery .techno-fan-photo{
+        width: 70%;
+
+        border-radius: 10px;
+    }
+
+    .techno-fan-photo-one{
+        top: 43px;
+
+        transform: rotate(-9deg);
+    }
+
+    .techno-fan-photo-two{
+        top: 10px;
+        left: 15%;
+    }
+
+    .techno-fan-photo-three{
+        top: 44px;
+
+        transform: rotate(9deg);
+    }
+
+    .techno-postharvest-gallery{
+        gap: 8px;
+    }
+
+    .techno-postharvest-gallery img{
+        border-radius: 9px;
+    }
+}
+
+
+/* ======================================================= */
+/* ================= УЗКИЕ ТЕЛЕФОНЫ ===================== */
+/* ======================================================= */
+
+@media (max-width: 360px){
+    .techno-main-block{
+        height: 240px;
+    }
+
+    .techno-main-block-text h1{
+        font-size: 20px;
+    }
+
+    .techno-info-block > img{
+        height: 170px;
+    }
+
+    .techno-info-block-text h2{
+        font-size: 18px;
+    }
+
+    .techno-info-block-text p{
+        font-size: 13px;
+    }
+
+    .techno-fan-gallery{
+        height: 225px;
+    }
+}
+
+/* ======================================================= */
+/* ==== ВЕЕР ИЗ 4 ФОТО: ПОСЛЕУБОРОЧНАЯ ПОДГОТОВКА ====== */
+/* ======================================================= */
+
+.techno-info-block-postharvest{
+    align-items: center;
+}
+
+.techno-postharvest-fan-gallery{
+    position: relative;
+
+    flex: 0 1 530px;
+
+    width: 100%;
+    max-width: 530px;
+    height: 390px;
+}
+
+.techno-postharvest-fan-photo{
+    position: absolute;
+
+    display: block;
+
+    width: 58%;
+    height: auto;
+    max-width: none;
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: 3px solid rgba(255, 255, 255, 0.78);
+    border-radius: 16px;
+
+    box-shadow:
+        0 16px 30px rgba(0, 0, 0, 0.38),
+        0 0 20px rgba(223, 93, 5, 0.10);
+
+    filter: brightness(0.9);
+
+    transition:
+        transform 0.38s ease,
+        box-shadow 0.38s ease,
+        filter 0.38s ease;
+}
+
+/* Крайняя левая фотография */
+.techno-postharvest-fan-photo-one{
+    top: 70px;
+    left: 0;
+    z-index: 1;
+
+    transform: rotate(-13deg);
+}
+
+/* Левая центральная фотография */
+.techno-postharvest-fan-photo-two{
+    top: 30px;
+    left: 13%;
+    z-index: 2;
+
+    transform: rotate(-5deg);
+}
+
+/* Правая центральная фотография */
+.techno-postharvest-fan-photo-three{
+    top: 30px;
+    right: 13%;
+    z-index: 3;
+
+    transform: rotate(5deg);
+}
+
+/* Крайняя правая фотография */
+.techno-postharvest-fan-photo-four{
+    top: 70px;
+    right: 0;
+    z-index: 4;
+
+    transform: rotate(13deg);
+}
+
+@media (hover: hover){
+    .techno-postharvest-fan-gallery:hover
+    .techno-postharvest-fan-photo-one{
+        transform: translateX(-18px) translateY(10px) rotate(-17deg);
+    }
+
+    .techno-postharvest-fan-gallery:hover
+    .techno-postharvest-fan-photo-two{
+        transform: translateX(-7px) translateY(-13px) rotate(-7deg);
+    }
+
+    .techno-postharvest-fan-gallery:hover
+    .techno-postharvest-fan-photo-three{
+        transform: translateX(7px) translateY(-13px) rotate(7deg);
+    }
+
+    .techno-postharvest-fan-gallery:hover
+    .techno-postharvest-fan-photo-four{
+        transform: translateX(18px) translateY(10px) rotate(17deg);
+    }
+
+    .techno-postharvest-fan-photo:hover{
+        z-index: 20;
+
+        filter: brightness(1.08);
+
+        box-shadow:
+            0 22px 38px rgba(0, 0, 0, 0.52),
+            0 0 28px rgba(245, 166, 35, 0.22);
+    }
+}
+
+
+/* ======================================================= */
+/* ====================== ПЛАНШЕТЫ ======================= */
+/* ======================================================= */
+
+@media (max-width: 1024px){
+    .techno-postharvest-fan-gallery{
+        flex-basis: 430px;
+
+        max-width: 430px;
+        height: 330px;
+    }
+
+    .techno-postharvest-fan-photo{
+        width: 59%;
+
+        border-radius: 13px;
+    }
+
+    .techno-postharvest-fan-photo-one,
+    .techno-postharvest-fan-photo-four{
+        top: 60px;
+    }
+
+    .techno-postharvest-fan-photo-two,
+    .techno-postharvest-fan-photo-three{
+        top: 24px;
+    }
+}
+
+
+/* ======================================================= */
+/* ======================= ТЕЛЕФОНЫ ====================== */
+/* ======================================================= */
+
+@media (max-width: 768px){
+    .techno-info-block-postharvest{
+        flex-direction: column;
+    }
+
+    .techno-postharvest-fan-gallery{
+        flex: none;
+
+        width: 100%;
+        max-width: 520px;
+        height: 330px;
+        margin: 0 auto;
+    }
+
+    .techno-postharvest-fan-photo{
+        width: 59%;
+
+        border-width: 2px;
+    }
+}
+
+
+/* ======================================================= */
+/* =================== ОБЫЧНЫЕ ТЕЛЕФОНЫ ================= */
+/* ======================================================= */
+
+@media (max-width: 480px){
+    .techno-postharvest-fan-gallery{
+        height: 255px;
+    }
+
+    .techno-postharvest-fan-photo{
+        width: 61%;
+
+        border-radius: 10px;
+    }
+
+    .techno-postharvest-fan-photo-one,
+    .techno-postharvest-fan-photo-four{
+        top: 48px;
+    }
+
+    .techno-postharvest-fan-photo-two,
+    .techno-postharvest-fan-photo-three{
+        top: 13px;
+    }
+}
+
+/* ======================================================= */
+/* ==== МОБИЛЬНАЯ ВЕРСИЯ: ВСЕ ФОТО ВИДНЫ ПОЛНОСТЬЮ ====== */
+/* ======================================================= */
+
+@media (max-width: 768px){
+    /*
+        Веер почвообрабатывающей техники превращается
+        в обычную сетку 2 × 2. Три фото не перекрываются.
+    */
+    .techno-fan-gallery{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+
+        width: 100%;
+        max-width: 560px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .techno-fan-gallery .techno-fan-photo,
+    .techno-fan-photo-one,
+    .techno-fan-photo-two,
+    .techno-fan-photo-three{
+        position: static;
+
+        display: block;
+
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+
+        object-fit: cover;
+
+        border: 2px solid rgba(255, 255, 255, 0.78);
+        border-radius: 12px;
+
+        filter: brightness(0.96);
+
+        transform: none;
+    }
+
+    /*
+        Веер послеуборочной подготовки также становится
+        обычной сеткой: все четыре изображения видны.
+    */
+    .techno-postharvest-fan-gallery{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+
+        width: 100%;
+        max-width: 560px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .techno-postharvest-fan-photo,
+    .techno-postharvest-fan-photo-one,
+    .techno-postharvest-fan-photo-two,
+    .techno-postharvest-fan-photo-three,
+    .techno-postharvest-fan-photo-four{
+        position: static;
+
+        display: block;
+
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+
+        object-fit: cover;
+
+        border: 2px solid rgba(255, 255, 255, 0.78);
+        border-radius: 12px;
+
+        filter: brightness(0.96);
+
+        transform: none;
+    }
+}
+
+
+/* ======================================================= */
+/* =============== ОБЫЧНЫЕ ТЕЛЕФОНЫ: 1 ФОТО ============= */
+/* ======================================================= */
+
+@media (max-width: 480px){
+    /*
+        На узких экранах каждая фотография занимает
+        отдельную строку: ничего не сжимается и не обрезается.
+    */
+    .techno-fan-gallery,
+    .techno-postharvest-fan-gallery{
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .techno-fan-gallery .techno-fan-photo,
+    .techno-postharvest-fan-photo{
+        border-radius: 10px;
+    }
+}

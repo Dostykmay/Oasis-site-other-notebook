@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* тут прописать подключение шрифтов сразу */
+@font-face{
+    font-family: 'Avenir-Light';
+    src: url('../components/fonts/Avenir-Light.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Avenir-Light+';
+    src: url('../components/fonts/Avenir-light+.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Avenir-Medium';
+    src: url('../components/fonts/Avenir-Medium.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Avenir-Heavy';
+    src: url('../components/fonts/Avenir-Heavy.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Avenir-Bold';
+    src: url('../components/fonts/Avenir-Bold.woff') format('woff');
+}
+
+@font-face{
+    font-family: 'Avenir-BoldOlique';
+    src: url('../components/fonts/Avenir-BlackOblique.woff') format('woff');
+}
+
+body{
+    height: 100%;
+    width: 100%;
+}
