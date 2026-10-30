@@ -38,9 +38,11 @@
     });
   }
 
-  // ===== 2. УДАЛЕНИЕ COOKIE МЕТРИКИ ПРИ ОТКАЗЕ =====
+   // ===== 2. УДАЛЕНИЕ ДАННЫХ МЕТРИКИ ПРИ ОТКАЗЕ =====
   function removeMetrikaCookies() {
     var host = location.hostname;
+
+    // cookie
     document.cookie.split(';').forEach(function (c) {
       var name = c.split('=')[0].trim();
       if (name.indexOf('_ym') === 0) {
@@ -49,6 +51,13 @@
         document.cookie = name + '=; Max-Age=0; path=/; domain=.' + host;
       }
     });
+
+    // локальная память
+    try {
+      Object.keys(localStorage).forEach(function (key) {
+        if (key.indexOf('_ym') === 0) localStorage.removeItem(key);
+      });
+    } catch (e) {}
   }
 
   // ===== 3. СТИЛИ ПЛАШКИ =====
