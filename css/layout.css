@@ -669,6 +669,36 @@
     }
 }
 
+/* ======================================================= */
+/* ============== FOOTER: ССЫЛКИ НА ДОКУМЕНТЫ ============ */
+/* ======================================================= */
+
+.footer-legal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 32px;
+
+    padding: 16px 20px 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.footer-legal a{
+    color: rgb(218, 212, 212);
+    font-family: "Avenir-Light", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus{
+    color: white;
+    text-decoration: underline;
+}
 
 /* ======================================================= */
 /* ================= УЗКИЕ ТЕЛЕФОНЫ ===================== */
