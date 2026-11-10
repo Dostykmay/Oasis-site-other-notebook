@@ -8,3 +8,9 @@ RewriteRule ^ https://oasis-seeds.su%{REQUEST_URI} [R=301,L,NE]
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
 RewriteRule ^ https://oasis-seeds.su%{REQUEST_URI} [R=301,L,NE]
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html?|css|js|webp|png|jpe?g|gif|svg|ico|woff2?)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
