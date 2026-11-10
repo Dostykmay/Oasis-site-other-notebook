@@ -8,31 +8,38 @@
 @font-face{
     font-family: 'Avenir-Light';
     src: url('../components/fonts/Avenir-Light.woff') format('woff');
+    /* ниже свойство сразу подгружает базовые шрифты без ожидания, когда загрузится этот шрифт скаченный  */
+    font-display: swap;
 }
 
 @font-face{
     font-family: 'Avenir-Light+';
     src: url('../components/fonts/Avenir-light+.woff') format('woff');
+    font-display: swap;
 }
 
 @font-face{
     font-family: 'Avenir-Medium';
     src: url('../components/fonts/Avenir-Medium.woff') format('woff');
+    font-display: swap;
 }
 
 @font-face{
     font-family: 'Avenir-Heavy';
     src: url('../components/fonts/Avenir-Heavy.woff') format('woff');
+    font-display: swap;
 }
 
 @font-face{
     font-family: 'Avenir-Bold';
     src: url('../components/fonts/Avenir-Bold.woff') format('woff');
+    font-display: swap;
 }
 
 @font-face{
     font-family: 'Avenir-BoldOlique';
     src: url('../components/fonts/Avenir-BlackOblique.woff') format('woff');
+    font-display: swap;
 }
 
 body{
