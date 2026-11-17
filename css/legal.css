@@ -1,57 +1,552 @@
-/* ===== СТРАНИЦЫ С ДОКУМЕНТАМИ ===== */
-.legal-page {
-    max-width: 860px;
+/* ======================================================= */
+/* ============ ЮРИДИЧЕСКИЕ СТРАНИЦЫ — LEGAL ============= */
+/* ======================================================= */
+
+.legal-body{
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(233, 93, 5, 0.16), transparent 55%),
+        linear-gradient(160deg, #2f3435 0%, #191c1d 100%);
+    min-height: 100vh;
+    color: #23282a;
+}
+
+/* отступ под фиксированный хедер */
+.legal-page{
+    max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px 60px;
-    line-height: 1.6;
+    padding: 110px 20px 80px;
 }
 
-.legal-page h1 {
-    margin-bottom: 8px;
+/* ------------------------------------------------------- */
+/* --------------- ЛИСТ ДОКУМЕНТА ------------------------ */
+/* ------------------------------------------------------- */
+
+.legal-document{
+    background: #fbfaf8;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    box-shadow:
+        0 26px 60px rgba(0, 0, 0, 0.42),
+        0 2px 0 rgba(255, 255, 255, 0.04) inset;
+    padding: 56px 64px 46px;
 }
 
-.legal-page h2 {
-    margin-top: 32px;
-    font-size: 1.25em;
+/* ------------------------------------------------------- */
+/* -------------------- ШАПКА ---------------------------- */
+/* ------------------------------------------------------- */
+
+.legal-header{
+    padding-bottom: 28px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(35, 40, 42, 0.14);
 }
 
-.legal-page ul {
-    padding-left: 22px;
+.legal-kicker{
+    margin: 0 0 10px;
+    color: #c2500a;
+    font-family: 'Avenir-Bold', 'Avenir', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
-.legal-page li {
-    margin-bottom: 6px;
+.legal-header h1{
+    margin: 0;
+    color: #1e2324;
+    font-family: 'Avenir-Bold', 'Avenir', Arial, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
 }
 
-.legal-page a {
-    color: rgb(194, 70, 8);
+.legal-date{
+    margin: 14px 0 0;
+    color: #7a8184;
+    font-family: 'Avenir-Light', 'Avenir', Arial, sans-serif;
+    font-size: 15px;
 }
 
-.legal-date {
-    color: #777777;
-    font-size: 0.9em;
+/* ------------------------------------------------------- */
+/* ------------------ СОДЕРЖАНИЕ ------------------------- */
+/* ------------------------------------------------------- */
+
+.legal-toc{
+    margin-bottom: 40px;
+    padding: 22px 26px;
+    background: #f2efea;
+    border-left: 3px solid #df590a;
+    border-radius: 0 10px 10px 0;
 }
 
-.legal-table {
+.legal-toc-title{
+    margin: 0 0 12px;
+    color: #5c6467;
+    font-family: 'Avenir-Bold', 'Avenir', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.legal-toc ol{
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    column-gap: 32px;
+}
+
+.legal-toc li{
+    margin-bottom: 7px;
+    break-inside: avoid;
+    color: #3a4245;
+    font-family: 'Avenir-Light', 'Avenir', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.legal-toc a{
+    color: #3a4245;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.legal-toc a:hover{
+    color: #bf4d08;
+    border-bottom-color: rgba(191, 77, 8, 0.4);
+}
+
+/* ------------------------------------------------------- */
+/* ------------------- СЕКЦИИ ---------------------------- */
+/* ------------------------------------------------------- */
+
+.legal-document section{
+    margin-bottom: 36px;
+    scroll-margin-top: 100px;
+}
+
+.legal-document h2{
+    margin: 0 0 16px;
+    padding-top: 4px;
+    color: #1e2324;
+    font-family: 'Avenir-Bold', 'Avenir', Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.legal-document h2::before{
+    content: "";
+    display: block;
+    width: 34px;
+    height: 3px;
+    margin-bottom: 14px;
+    background: #df590a;
+    border-radius: 2px;
+}
+
+.legal-document p{
+    margin: 0 0 14px;
+    color: #33393b;
+    font-family: 'Avenir-Light', 'Avenir', Arial, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.75;
+}
+
+.legal-document ul{
+    margin: 0 0 16px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.legal-document ul li{
+    position: relative;
+    margin-bottom: 9px;
+    padding-left: 24px;
+    color: #33393b;
+    font-family: 'Avenir-Light', 'Avenir', Arial, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.7;
+}
+
+.legal-document ul li::before{
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    background: #df590a;
+    border-radius: 50%;
+}
+
+/* ----------------------- ССЫЛКИ ------------------------ */
+
+.legal-document a{
+    color: #b8480a;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184, 72, 10, 0.34);
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.legal-document a:hover{
+    color: #8d3506;
+    border-bottom-color: #8d3506;
+}
+
+/* ------------------- КОД / COOKIE ---------------------- */
+
+.legal-document code{
+    padding: 2px 7px;
+    background: #efe9e1;
+    border: 1px solid rgba(35, 40, 42, 0.1);
+    border-radius: 5px;
+    color: #6b3a10;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* ------------- МЕСТА ДЛЯ ЗАПОЛНЕНИЯ -------------------- */
+
+.legal-fill{
+    padding: 1px 6px;
+    background: rgba(223, 89, 10, 0.12);
+    border-bottom: 1px dashed rgba(191, 77, 8, 0.55);
+    border-radius: 3px;
+    color: #8d3506;
+    font-size: 15.5px;
+}
+
+/* ------------------------------------------------------- */
+/* --------------------- ТАБЛИЦА ------------------------- */
+/* ------------------------------------------------------- */
+
+.legal-table-wrap{
+    margin: 0 0 22px;
+    overflow-x: auto;
+    border: 1px solid rgba(35, 40, 42, 0.14);
+    border-radius: 10px;
+}
+
+.legal-table{
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 0.95em;
+    font-family: 'Avenir-Light', 'Avenir', Arial, sans-serif;
+    font-size: 15.5px;
 }
 
-.legal-table th,
-.legal-table td {
-    border: 1px solid #dddddd;
-    padding: 8px 10px;
+.legal-table thead th{
+    padding: 13px 16px;
+    background: #2f3435;
+    color: #fff;
+    font-family: 'Avenir-Bold', 'Avenir', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.legal-table tbody td{
+    padding: 13px 16px;
+    border-top: 1px solid rgba(35, 40, 42, 0.1);
+    color: #33393b;
+    line-height: 1.55;
     vertical-align: top;
 }
 
-.legal-table th {
-    background: #f5f5f5;
+.legal-table tbody tr:nth-child(even){
+    background: #f4f1ec;
 }
 
-/* На телефоне таблица прокручивается вбок */
-.legal-table-wrap {
-    overflow-x: auto;
+.legal-table tbody tr:hover{
+    background: #efe9e1;
+}
+
+.legal-table code{
+    white-space: nowrap;
+}
+
+/* ------------------------------------------------------- */
+/* --------------------- КОНТАКТЫ ------------------------ */
+/* ------------------------------------------------------- */
+
+.legal-contacts li::before{
+    background: #df590a;
+}
+
+/* ------------------------------------------------------- */
+/* ---------------------- ПОДВАЛ ------------------------- */
+/* ------------------------------------------------------- */
+
+.legal-footer{
+    margin-top: 42px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(35, 40, 42, 0.14);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.legal-footer p{
+    margin: 0;
+    color: #7a8184;
+    font-size: 14.5px;
+}
+
+.legal-footer a{
+    color: #b8480a;
+    border-bottom: 1px solid rgba(184, 72, 10, 0.34);
+    text-decoration: none;
+}
+
+.legal-footer a:hover{
+    color: #8d3506;
+    border-bottom-color: #8d3506;
+}
+
+/* ======================================================= */
+/* ================ ПЛАНШЕТЫ (до 1024px) ================= */
+/* ======================================================= */
+
+@media (max-width: 1024px){
+
+    .legal-page{
+        padding: 100px 18px 60px;
+    }
+
+    .legal-document{
+        padding: 44px 42px 38px;
+    }
+
+    .legal-header h1{
+        font-size: 33px;
+    }
+
+    .legal-document h2{
+        font-size: 21px;
+    }
+}
+
+/* ======================================================= */
+/* ============ ТЕЛЕФОНЫ / ПЛАНШЕТЫ (до 768px) =========== */
+/* ======================================================= */
+
+@media (max-width: 768px){
+
+    .legal-page{
+        padding: 92px 14px 50px;
+    }
+
+    .legal-document{
+        padding: 32px 24px 28px;
+        border-radius: 14px;
+    }
+
+    .legal-header{
+        padding-bottom: 22px;
+        margin-bottom: 24px;
+    }
+
+    .legal-header h1{
+        font-size: 27px;
+        line-height: 1.22;
+    }
+
+    .legal-date{
+        font-size: 14px;
+    }
+
+    .legal-toc{
+        padding: 18px 20px;
+        margin-bottom: 30px;
+    }
+
+    .legal-toc ol{
+        columns: 1;
+    }
+
+    .legal-document h2{
+        font-size: 19.5px;
+    }
+
+    .legal-document h2::before{
+        width: 28px;
+        margin-bottom: 11px;
+    }
+
+    .legal-document p,
+    .legal-document ul li{
+        font-size: 15.5px;
+        line-height: 1.7;
+    }
+
+    .legal-document section{
+        margin-bottom: 28px;
+    }
+
+    .legal-table{
+        font-size: 14px;
+    }
+
+    .legal-table thead th,
+    .legal-table tbody td{
+        padding: 11px 12px;
+    }
+
+    .legal-footer{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* ======================================================= */
+/* ============== ТЕЛЕФОНЫ (до 480px) ==================== */
+/* ======================================================= */
+
+@media (max-width: 480px){
+
+    .legal-page{
+        padding: 84px 10px 40px;
+    }
+
+    .legal-document{
+        padding: 26px 18px 22px;
+        border-radius: 12px;
+    }
+
+    .legal-kicker{
+        font-size: 11px;
+    }
+
+    .legal-header h1{
+        font-size: 23px;
+    }
+
+    .legal-toc{
+        padding: 16px 16px;
+    }
+
+    .legal-toc li{
+        font-size: 14px;
+    }
+
+    .legal-document h2{
+        font-size: 18px;
+    }
+
+    .legal-document p,
+    .legal-document ul li{
+        font-size: 14.5px;
+        line-height: 1.65;
+    }
+
+    .legal-document ul li{
+        padding-left: 20px;
+    }
+
+    .legal-document ul li::before{
+        top: 9px;
+        width: 5px;
+        height: 5px;
+    }
+
+    .legal-table{
+        font-size: 13px;
+    }
+
+    .legal-table thead th,
+    .legal-table tbody td{
+        padding: 9px 10px;
+    }
+
+    .legal-document code{
+        font-size: 12.5px;
+    }
+
+    .legal-footer p{
+        font-size: 13.5px;
+    }
+}
+
+/* ======================================================= */
+/* =============== УЗКИЕ ЭКРАНЫ (до 360px) =============== */
+/* ======================================================= */
+
+@media (max-width: 360px){
+
+    .legal-document{
+        padding: 22px 14px 18px;
+    }
+
+    .legal-header h1{
+        font-size: 20px;
+    }
+
+    .legal-document h2{
+        font-size: 16.5px;
+    }
+
+    .legal-document p,
+    .legal-document ul li{
+        font-size: 14px;
+    }
+
+    .legal-table{
+        font-size: 12.5px;
+    }
+}
+
+/* ======================================================= */
+/* ==================== ПЕЧАТЬ =========================== */
+/* ======================================================= */
+
+@media print{
+
+    .legal-body{
+        background: #fff;
+    }
+
+    .legal-page{
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .legal-document{
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .legal-toc,
+    #header-placeholder,
+    #footer-placeholder,
+    .legal-footer{
+        display: none;
+    }
+
+    .legal-document h2{
+        page-break-after: avoid;
+    }
+
+    .legal-document section{
+        page-break-inside: avoid;
+    }
+
+    .legal-document a{
+        color: #000;
+        border-bottom: none;
+    }
+
+    .legal-table thead th{
+        background: #e5e5e5;
+        color: #000;
+    }
 }
