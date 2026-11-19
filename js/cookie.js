@@ -1,17 +1,15 @@
 /* =====================================================
    COOKIE-БАННЕР + ЯНДЕКС МЕТРИКА
-   Метрика запускается ТОЛЬКО после нажатия «Принять»
+   Метрика запускается только после нажатия «Принять»
    ===================================================== */
 (function () {
   var METRIKA_ID = 113674999;
 
-  // Папка сайта (чтобы ссылки работали и со страниц в подпапках)
   var script = document.currentScript;
   var BASE = script ? script.src.replace(/js\/cookie\.js.*$/, '') : '';
 
-  // ===== 1. ЗАПУСК МЕТРИКИ =====
   function loadMetrika() {
-    if (window.ym) return; // уже запущена
+    if (window.ym) return;
 
     (function (m, e, t, r, i, k, a) {
       m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
@@ -27,22 +25,16 @@
     })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=' + METRIKA_ID, 'ym');
 
     ym(METRIKA_ID, 'init', {
-      ssr: true,
-      webvisor: true,
-      clickmap: true,
-      ecommerce: 'dataLayer',
-      referrer: document.referrer,
-      url: location.href,
-      accurateTrackBounce: true,
-      trackLinks: true
+      webvisor: false,
+      clickmap: false,
+      trackLinks: true,
+      accurateTrackBounce: true
     });
   }
 
-   // ===== 2. УДАЛЕНИЕ ДАННЫХ МЕТРИКИ ПРИ ОТКАЗЕ =====
   function removeMetrikaCookies() {
     var host = location.hostname;
 
-    // cookie
     document.cookie.split(';').forEach(function (c) {
       var name = c.split('=')[0].trim();
       if (name.indexOf('_ym') === 0) {
@@ -52,7 +44,6 @@
       }
     });
 
-    // локальная память
     try {
       Object.keys(localStorage).forEach(function (key) {
         if (key.indexOf('_ym') === 0) localStorage.removeItem(key);
@@ -60,7 +51,6 @@
     } catch (e) {}
   }
 
-  // ===== 3. СТИЛИ ПЛАШКИ =====
   var style = document.createElement('style');
   style.textContent =
     '#cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;max-width:640px;margin:0 auto;' +
@@ -79,7 +69,6 @@
     '#cookie-banner .cookie-buttons{flex-direction:column}}';
   document.head.appendChild(style);
 
-  // ===== 4. САМА ПЛАШКА =====
   var banner = document.createElement('div');
   banner.id = 'cookie-banner';
   banner.setAttribute('role', 'dialog');
@@ -99,7 +88,6 @@
     '</div>';
   document.body.appendChild(banner);
 
-  // ===== 5. ЛОГИКА ВЫБОРА =====
   var choice = null;
   try { choice = localStorage.getItem('cookieChoice'); } catch (e) {}
 
@@ -113,6 +101,7 @@
     try { localStorage.setItem('cookieChoice', 'accepted'); } catch (e) {}
     banner.style.display = 'none';
     loadMetrika();
+    document.dispatchEvent(new Event('cookie-consent-accepted'));
   });
 
   document.getElementById('cookie-reject').addEventListener('click', function () {
@@ -120,10 +109,9 @@
     try { localStorage.setItem('cookieChoice', 'rejected'); } catch (e) {}
     banner.style.display = 'none';
     removeMetrikaCookies();
-    if (wasRunning) location.reload(); // останавливаем уже запущенную Метрику
+    if (wasRunning) location.reload();
   });
 
-  // ===== 6. ОТКРЫТЬ ПЛАШКУ СНОВА (для ссылки в футере) =====
   window.openCookieSettings = function () {
     banner.style.display = 'block';
   };
