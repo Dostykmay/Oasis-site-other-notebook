@@ -113,13 +113,23 @@ main {
     gap: 24px;
 }
 
-.concret-block {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(223, 93, 5, 0.25);
-    border-radius: 20px;
-    padding: 28px 26px;
-    transition: all 0.3s ease;
+.concret-block a,
+.concret-block a:link,
+.concret-block a:visited {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(255, 255, 255, 0.45);
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
+
+.concret-block a:hover,
+.concret-block a:active {
+    color: #f5a623;
+    text-decoration-color: #f5a623;
+}
+
 
 .concret-block:hover {
     background: rgba(255, 255, 255, 0.09);
